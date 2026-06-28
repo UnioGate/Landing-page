@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import React, { useState } from "react";
 import { supabase } from "@/config/supabaseClient";
 import { toast } from "react-toastify";
+import Loader from "./Loader";
 
 
 
@@ -111,7 +112,7 @@ export default function Hero() {
                             className=" text-white font-semibold text-sm md:text-base font-sora bg-[#253E86]
 p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
                             "
-                        >{isSubmitting ? "..." : "Get Early Access"}</button>
+                        >{isSubmitting ? <Loader color="#ffffff" /> : "Get Early Access"}</button>
                     </form>
                 </div>
 
