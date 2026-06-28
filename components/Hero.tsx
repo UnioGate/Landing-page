@@ -15,7 +15,7 @@ export default function Hero() {
 
 
             {/* main section  */}
-            <div className="w-[95%] md:w-[90%] flex-1  mx-auto flex flex-col md:flex-row justify-between items-start mt-5 gap-20  " >
+            <div className="w-[95%] md:w-[90%] flex-1  mx-auto flex flex-col md:flex-row justify-between items-start mt-5 gap-8  " >
 
 
 
@@ -55,27 +55,27 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
 
                 {/* The right side  */}
-                <div className="w-full  md:max-w-155  h-full relative flex flex-col items-end justify-center overflow-y-hidden " >
+                <div className="w-full  md:max-w-155 flex-1 md:h-full relative flex flex-col items-end justify-center overflow-y-hidden " >
 
-                    <div className="bg-[#253E86] shadow-[0px_4px_20px_10px_rgba(0,0,0,0.25)] h-[70%] w-full max-w-[99%] absolute bottom-0 left-[50%] translate-x-[-50%] md:max-w-152.25 rounded-t-[70px] " >
+                    <div className="bg-[#253E86] shadow-[0px_4px_20px_10px_rgba(0,0,0,0.25)] h-[38%] md:h-[70%] w-full max-w-[99%] absolute bottom-0 left-[50%] translate-x-[-50%] md:max-w-152.25 rounded-t-[70px] " >
 
                     </div>
 
 
                     <motion.span
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        initial={{ y: 100, }}
+                        animate={{ y: 0, }}
                         transition={{
                             duration: 0.8,
                             ease: "easeOut",
                         }}
-                        className="z-10 mx-auto w-70 md:w-[528.8px] h-auto md:h-175">
+                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175">
 
                         <Image
                             src={"/landing-page-images/phone.png"}
                             loading="eager"
                             alt="phone" height={1000} width={1000}
-                            className=" h-full w-full  object-contain object-center "
+                            className=" h-full w-full  object-contain object-center self-end "
                         />
                     </motion.span>
                 </div>
