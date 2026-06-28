@@ -16,8 +16,7 @@ export default function ScrollingText() {
                     marquee_text.map((text, index) => (
                         <span key={index} className="gap-2.5 flex flex-row items-center ">
 
-                            <span className="block text-white w-1.75 h-1.75 " >
-                                rre
+                            <span className="block bg-white w-1.75 h-1.75 " >
                             </span>
 
                             <h3 className="font-sora text-sm
