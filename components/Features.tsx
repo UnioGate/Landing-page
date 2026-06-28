@@ -10,7 +10,7 @@ export default function Features() {
         <section className="grid grid-cols-1 md:grid-cols-2 w-full  " >
 
             {/* point 1 */}
-            <div className="w-full flex flex-col items-start gap-5 px-15.25 py-15 border-b-[0.5px] border-[#10182A] border-r-[0.5px] " >
+            <div className="w-full flex flex-col items-start gap-5 px-6 md:px-15.25 py-10 md:py-15 border-b-[0.5px] border-[#10182A] md:border-r-[0.5px] " >
                 <span className="bg-[#253E86] rounded-[20px]  size-15 flex items-center justify-center " >
                     <PhoneIcon />
                 </span>
@@ -26,7 +26,7 @@ export default function Features() {
 
 
             {/* Point 2  */}
-            <div className="w-full flex flex-col items-start gap-5 px-15.25 py-15 border-b-[0.5px] border-[#10182A]" >
+            <div className="w-full flex flex-col items-start gap-5  px-6 md:px-15.25 py-10 md:py-15  border-b-[0.5px] border-[#10182A]" >
                 <span className="bg-[#253E86] rounded-[20px]  size-15 flex items-center justify-center " >
                     <DollarIcon />
                 </span>
@@ -41,7 +41,7 @@ export default function Features() {
             </div>
 
             {/* point 3 */}
-            <div className="w-full flex flex-col items-start gap-5 px-15.25 py-15 border-[#10182A] border-r-[0.5px]" >
+            <div className="w-full flex flex-col items-start gap-5  px-6 md:px-15.25 py-10 md:py-15  border-[#10182A] md:border-r-[0.5px]" >
                 <span className="bg-[#253E86] rounded-[20px]  size-15 flex items-center justify-center " >
                     <BuildingIcon />
                 </span>
@@ -57,7 +57,7 @@ export default function Features() {
 
 
             {/* point 4  */}
-            <div className="w-full flex flex-col items-start gap-5 px-15.25 py-15 " >
+            <div className="w-full flex flex-col items-start gap-5  px-6 md:px-15.25 py-10 md:py-15  " >
                 <span className="bg-[#253E86] rounded-[20px]  size-15 flex items-center justify-center " >
                     <LinkIcon />
                 </span>
