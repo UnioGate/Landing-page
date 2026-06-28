@@ -7,6 +7,7 @@ import ScrollingText from "./ScrollingText";
 import { motion } from "framer-motion"
 import React, { useState } from "react";
 import { supabase } from "@/config/supabaseClient";
+import { toast } from "react-toastify";
 
 
 
@@ -19,7 +20,7 @@ export default function Hero() {
         e.preventDefault();
 
         if (!email.trim()) {
-            console.log("Please enter your email");
+            toast.error("Please enter your email");
             return;
         }
 
@@ -34,13 +35,13 @@ export default function Hero() {
                 .maybeSingle();
 
             if (fetchError) {
-                console.log(fetchError.message);
+                toast.error(fetchError.message);
                 setIsSubmitting(false);
                 return;
             }
 
             if (existingEmail) {
-                console.log("Email already exists.");
+                toast.error("Email already exists.");
                 setIsSubmitting(false);
                 return;
             }
@@ -53,13 +54,13 @@ export default function Hero() {
                 });
 
             if (insertError) {
-                console.log(insertError.message);
+                toast.error(insertError.message);
             } else {
-                console.log("Successfully joined the waitlist!");
+                toast.error("Successfully joined the waitlist!");
                 setEmail("");
             }
         } catch (err) {
-            console.log(err);
+            console.error(err);
         } finally {
             setIsSubmitting(false);
         }
@@ -94,6 +95,7 @@ export default function Hero() {
                         onSubmit={handleSubmit}
                         className="w-[95%] flex items-center justify-between gap-1.75 " >
                         <input
+                            type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="your business.com"
