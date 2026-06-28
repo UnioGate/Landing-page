@@ -23,6 +23,7 @@ export default function Metrics() {
                     transition={{
                         duration: 0.5,
                         ease: "easeOut",
+                        delay: 0,
                     }}
                     viewport={{ once: true }}
 
@@ -48,6 +49,7 @@ export default function Metrics() {
                     transition={{
                         duration: 0.5,
                         ease: "easeOut",
+                        delay: 0.2,
                     }}
                     viewport={{ once: true }}
                     className="text-3xl md:text-[60px] font-jakarta text-[#000000] " >Q4’ 06
@@ -72,6 +74,7 @@ export default function Metrics() {
                     transition={{
                         duration: 0.5,
                         ease: "easeOut",
+                        delay: 0.4,
                     }}
                     viewport={{ once: true }} className="text-3xl md:text-[60px] font-jakarta text-[#000000] " >Beta</motion.h4>
                 <h5 className="text-base md:text-2xl text-[#000000] font-light font-sora " >EARLY ACCESS</h5>
