@@ -19,8 +19,8 @@ export default function ScrollingText() {
                             <span className="block bg-white w-1.75 h-1.75 " >
                             </span>
 
-                            <h3 className="font-sora text-sm
-                             text-[#ffffff] mx-10 flex items-center gap-2 "> {text}</h3>
+                            <h3 className="font-sora text-xs md:text-sm
+                             text-[#ffffff] flex items-center gap-2 "> {text}</h3>
                         </span>
 
                     ))

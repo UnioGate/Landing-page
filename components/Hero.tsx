@@ -14,7 +14,7 @@ export default function Hero() {
 
 
             {/* main section  */}
-            <div className="w-[90%] flex-1  mx-auto flex flex-row justify-between items-start mt-5  " >
+            <div className="w-[90%] flex-1  mx-auto flex flex-col md:flex-row justify-between items-start mt-5  " >
 
 
 
@@ -25,7 +25,7 @@ export default function Hero() {
                      border-[0.7px] border-[#000000] rounded-[20px] w-fit " >
                         THE STABLECOIN APP FOR MERCHANT </h4>
 
-                    <h1 className="text-[72px] leading-[110%] font-jakarta text-[#000000]  " >Every  customer.<br />Every  payment.<br />One  terminal.</h1>
+                    <h1 className=" text-4xl md:text-[56px] lg:text-[72px] leading-[110%] font-jakarta text-[#000000]  " >Every  customer.<br />Every  payment.<br />One  terminal.</h1>
 
                     <p className="font-sora text-xl text-[#000000]  " >Stop turning away crypto customers.
                         UnioGate lets
