@@ -69,7 +69,7 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
                             duration: 0.8,
                             ease: "easeOut",
                         }}
-                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-170">
+                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175 bg-amber-950">
 
                         <Image
                             src={"/landing-page-images/phone.png"}
