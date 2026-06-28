@@ -27,9 +27,9 @@ export default function Metrics() {
                     }}
                     viewport={{ once: true }}
 
-                    className=" text-3xl md:text-[60px] font-jakarta text-[#000000] " >0
+                    className=" text-3xl md:text-4xl lg:text-[60px] font-jakarta text-[#000000] " >0
                 </motion.h4>
-                <h5 className=" text-base md:text-2xl text-[#000000] font-light font-sora " >EARLY SIGNUPS</h5>
+                <h5 className=" text-base md:text-lg lg:text-2xl  text-[#000000] font-light font-sora " >EARLY SIGNUPS</h5>
             </div>
 
 
@@ -52,9 +52,9 @@ export default function Metrics() {
                         delay: 0.2,
                     }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-[60px] font-jakarta text-[#000000] " >Q4’ 06
+                    className="text-3xl  md:text-4xl lg:text-[60px] font-jakarta text-[#000000] " >Q4’ 06
                 </motion.h4>
-                <h5 className="text-base md:text-2xl text-[#000000] font-light font-sora " >TARGET LAUNCH</h5>
+                <h5 className="text-base md:text-lg lg:text-2xl  text-[#000000] font-light font-sora " >TARGET LAUNCH</h5>
             </div>
 
 
@@ -76,8 +76,8 @@ export default function Metrics() {
                         ease: "easeOut",
                         delay: 0.4,
                     }}
-                    viewport={{ once: true }} className="text-3xl md:text-[60px] font-jakarta text-[#000000] " >Beta</motion.h4>
-                <h5 className="text-base md:text-2xl text-[#000000] font-light font-sora " >EARLY ACCESS</h5>
+                    viewport={{ once: true }} className="text-3xl  md:text-4xl lg:text-[60px] font-jakarta text-[#000000] " >Beta</motion.h4>
+                <h5 className="text-base md:text-lg lg:text-2xl text-[#000000] font-light font-sora " >EARLY ACCESS</h5>
             </div>
 
 

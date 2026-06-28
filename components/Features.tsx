@@ -56,7 +56,7 @@ export default function Features() {
                         One terminal for everything
                     </h3>
 
-                    <p className="text-base md:text-xl font-sora font-normal text-[#000000]">
+                    <p className="text-base md:text-lg lg:text-xl font-sora font-normal text-[#000000]">
                         A single point-of-sale solution designed to handle every
                         payment your customers make. Whether they're paying with
                         stablecoins or traditional payment methods, everything is
@@ -79,7 +79,7 @@ export default function Features() {
                         Your customers have crypto
                     </h3>
 
-                    <p className="text-base md:text-xl font-sora font-normal text-[#000000]">
+                    <p className="text-base md:text-lg lg:text-xl font-sora font-normal text-[#000000]">
                         Millions of people around the world hold stablecoins and
                         other digital assets, and more of them are looking for
                         ways to use their crypto for everyday purchases. By
@@ -103,7 +103,7 @@ export default function Features() {
                         Built for vendors, not traders
                     </h3>
 
-                    <p className="text-base md:text-xl font-sora font-normal text-[#000000]">
+                    <p className="text-base md:text-lg lg:text-xl font-sora font-normal text-[#000000]">
                         UnioGate is built for business owners, merchants, and
                         everyday vendors—not crypto traders. That means no
                         complicated charts to interpret, no industry jargon to
@@ -126,7 +126,7 @@ export default function Features() {
                         The missing half of the stablecoin economy
                     </h3>
 
-                    <p className="text-base md:text-xl font-sora font-normal text-[#000000]">
+                    <p className="text-base md:text-lg lg:text-xl font-sora font-normal text-[#000000]">
                         Millions of people hold stablecoins, but spending them
                         at everyday businesses is still difficult. UnioGate
                         bridges that gap by making it easy for merchants to

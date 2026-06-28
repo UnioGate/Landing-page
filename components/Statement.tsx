@@ -21,7 +21,7 @@ export default function Statement() {
                     ease: "easeOut",
                 }}
                 viewport={{ once: true }}
-                className=" font-jakarta text-3xl md:text-[60px]
+                className=" font-jakarta text-3xl md:text-5xl lg:text-[60px]
             font-normal w-[95%] md:w-[80%] text-center " >
                 "Your store just became the smartest place to spend crypto."
             </motion.h2>
@@ -42,7 +42,7 @@ export default function Statement() {
                     ease: "easeOut",
                 }}
                 viewport={{ once: true }}
-                className="font-light font-sora text-lg md:text-2xl " >UNIOGATE - coming 2026
+                className="font-light font-sora text-lg text-xl lg:text-2xl " >UNIOGATE - coming 2026
             </motion.h4>
         </section>
     )
