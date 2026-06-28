@@ -10,12 +10,12 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
     return (
-        <section className="w-full min-h-screen md:h-screen pt-6  md:pt-10  flex flex-col  " >
+        <section className="w-full min-h-screen lg:h-screen pt-6  md:pt-10  flex flex-col  " >
             <Navbar />
 
 
             {/* main section  */}
-            <div className="w-[95%] md:w-[90%] flex-1  mx-auto flex flex-col md:flex-row justify-between items-start mt-5 gap-8  " >
+            <div className="w-[95%] md:w-[90%] flex-1  mx-auto flex flex-col lg:flex-row justify-between items-start mt-5 gap-8  " >
 
 
 
