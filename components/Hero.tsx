@@ -64,12 +64,12 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
                     <motion.span
                         initial={{ y: 100, }}
-                        animate={{ y: 10, }}
+                        animate={{ y: 20, }}
                         transition={{
                             duration: 0.8,
                             ease: "easeOut",
                         }}
-                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175 bg-amber-950 self-end">
+                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175  self-end">
 
                         <Image
                             src={"/landing-page-images/phone.png"}
