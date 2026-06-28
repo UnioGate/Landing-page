@@ -63,7 +63,7 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
 
                     <motion.span
-                        initial={{ y: 100, }}
+                        initial={{ y: 800, }}
                         animate={{ y: 20, }}
                         transition={{
                             duration: 0.5,
