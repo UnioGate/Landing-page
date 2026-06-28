@@ -64,18 +64,18 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
                     <motion.span
                         initial={{ y: 100, }}
-                        animate={{ y: 0, }}
+                        animate={{ y: 10, }}
                         transition={{
                             duration: 0.8,
                             ease: "easeOut",
                         }}
-                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175 bg-amber-950">
+                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175 bg-amber-950 self-end">
 
                         <Image
                             src={"/landing-page-images/phone.png"}
                             loading="eager"
                             alt="phone" height={1000} width={1000}
-                            className=" h-full w-full  object-contain object-center self-end "
+                            className=" h-full w-full  object-contain object-center  "
                         />
                     </motion.span>
                 </div>
