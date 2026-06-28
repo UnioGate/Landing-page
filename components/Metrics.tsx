@@ -21,7 +21,7 @@ export default function Metrics() {
                         opacity: 1,
                     }}
                     transition={{
-                        duration: 0.5,
+                        duration: 0.3,
                         ease: "easeOut",
                         delay: 0,
                     }}
@@ -47,7 +47,7 @@ export default function Metrics() {
                         opacity: 1,
                     }}
                     transition={{
-                        duration: 0.5,
+                        duration: 0.3,
                         ease: "easeOut",
                         delay: 0.2,
                     }}
@@ -72,7 +72,7 @@ export default function Metrics() {
                         opacity: 1,
                     }}
                     transition={{
-                        duration: 0.5,
+                        duration: 0.3,
                         ease: "easeOut",
                         delay: 0.4,
                     }}
