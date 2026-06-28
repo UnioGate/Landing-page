@@ -5,17 +5,74 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import ScrollingText from "./ScrollingText";
 import { motion } from "framer-motion"
+import React, { useState } from "react";
+import { supabase } from "@/config/supabaseClient";
 
 
 
 export default function Hero() {
+    const [email, setEmail] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!email.trim()) {
+            console.log("Please enter your email");
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            // Check if email already exists
+            const { data: existingEmail, error: fetchError } = await supabase
+                .from("waitlist")
+                .select("id")
+                .eq("email", email.trim())
+                .maybeSingle();
+
+            if (fetchError) {
+                console.log(fetchError.message);
+                setIsSubmitting(false);
+                return;
+            }
+
+            if (existingEmail) {
+                console.log("Email already exists.");
+                setIsSubmitting(false);
+                return;
+            }
+
+            // Insert new email
+            const { error: insertError } = await supabase
+                .from("waitlist")
+                .insert({
+                    email: email.trim(),
+                });
+
+            if (insertError) {
+                console.log(insertError.message);
+            } else {
+                console.log("Successfully joined the waitlist!");
+                setEmail("");
+            }
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+
     return (
         <section className="w-full min-h-screen lg:h-screen pt-6  md:pt-10  flex flex-col  " >
             <Navbar />
 
 
             {/* main section  */}
-            <div className="w-[95%] lg:w-[90%] flex-1  mx-auto flex flex-col lg:flex-row justify-between items-start mt-5 gap-8  " >
+            <div className="w-[95%] lg:w-[90%] flex-1  mx-auto flex flex-col lg:flex-row justify-between items-start mt-2.5 md:mt-5 gap-8  " >
 
 
 
@@ -33,8 +90,12 @@ export default function Hero() {
                         your business accept stablecoins as easily as any other payment — built for vendors,
                         not traders.</p>
 
-                    <div className="w-[95%] flex items-center justify-between gap-1.75 " >
+                    <form
+                        onSubmit={handleSubmit}
+                        className="w-[95%] flex items-center justify-between gap-1.75 " >
                         <input
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="your business.com"
                             className="border-[0.7px] border-[#5C5050] w-full h-full rounded-[10px]
                             font-sora text-sm md:text-base text-[#5C5050] py-2.5 px-2.5 outline-0 focus:outline-0
@@ -43,11 +104,13 @@ export default function Hero() {
 
 
                         <button
+                            type="submit"
+                            disabled={isSubmitting}
                             className=" text-white font-semibold text-sm md:text-base font-sora bg-[#253E86]
 p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
                             "
-                        >Get Early Access</button>
-                    </div>
+                        >{isSubmitting ? "..." : "Get Early Access"}</button>
+                    </form>
                 </div>
 
 
