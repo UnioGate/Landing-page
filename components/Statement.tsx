@@ -17,7 +17,7 @@ export default function Statement() {
                     y: 0,
                 }}
                 transition={{
-                    duration: 0.8,
+                    duration: 0.5,
                     ease: "easeOut",
                 }}
                 viewport={{ once: true }}
@@ -38,7 +38,7 @@ export default function Statement() {
                     y: 0,
                 }}
                 transition={{
-                    duration: 0.8,
+                    duration: 0.5,
                     ease: "easeOut",
                 }}
                 viewport={{ once: true }}

@@ -55,9 +55,9 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
 
                 {/* The right side  */}
-                <div className="w-full  md:max-w-155 flex-1 md:h-full relative flex flex-col items-end justify-center overflow-y-hidden " >
+                <div className="w-full h-auto  md:max-w-155 md:flex-1 md:h-full relative flex flex-col items-end justify-center overflow-y-hidden " >
 
-                    <div className="bg-[#253E86] shadow-[0px_4px_20px_10px_rgba(0,0,0,0.25)] h-[38%] md:h-[70%] w-full max-w-[99%] absolute bottom-0 left-[50%] translate-x-[-50%] md:max-w-152.25 rounded-t-[70px] " >
+                    <div className="bg-[#253E86] shadow-[0px_4px_20px_10px_rgba(0,0,0,0.25)] h-[50%] md:h-[70%] w-full max-w-[99%] absolute bottom-0 left-[50%] translate-x-[-50%] md:max-w-152.25 rounded-t-[35px] md:rounded-t-[70px] " >
 
                     </div>
 
@@ -69,7 +69,7 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
                             duration: 0.8,
                             ease: "easeOut",
                         }}
-                        className="z-10 mx-auto w-70 md:w-[528.8px] h-163 md:h-175  self-end">
+                        className="z-10 mx-auto w-70 md:w-[528.8px] h-auto md:h-175  self-end">
 
                         <Image
                             src={"/landing-page-images/phone.png"}
