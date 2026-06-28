@@ -41,7 +41,7 @@ export default function Hero() {
             }
 
             if (existingEmail) {
-                toast.error("Email already exists.");
+                toast("Email already exists.");
                 setIsSubmitting(false);
                 return;
             }
@@ -56,7 +56,7 @@ export default function Hero() {
             if (insertError) {
                 toast.error(insertError.message);
             } else {
-                toast.error("Successfully joined the waitlist!");
+                toast.success("Successfully joined the waitlist!");
                 setEmail("");
             }
         } catch (err) {
