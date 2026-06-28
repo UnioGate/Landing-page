@@ -4,17 +4,18 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
 import ScrollingText from "./ScrollingText";
+import { motion } from "framer-motion"
 
 
 
 export default function Hero() {
     return (
-        <section className="w-full min-h-screen md:h-screen  pt-10  flex flex-col  " >
+        <section className="w-full min-h-screen md:h-screen pt-6  md:pt-10  flex flex-col  " >
             <Navbar />
 
 
             {/* main section  */}
-            <div className="w-[95%] md:w-[90%] flex-1  mx-auto flex flex-col md:flex-row justify-between items-start mt-5 gap-7  " >
+            <div className="w-[95%] md:w-[90%] flex-1  mx-auto flex flex-col md:flex-row justify-between items-start mt-5 gap-20  " >
 
 
 
@@ -25,9 +26,9 @@ export default function Hero() {
                      border-[0.7px] border-[#000000] rounded-[20px] w-fit " >
                         THE STABLECOIN APP FOR MERCHANT </h4>
 
-                    <h1 className=" text-3xl md:text-[56px] lg:text-[72px] leading-[110%] font-jakarta text-[#000000]  " >Every  customer.<br />Every  payment.<br />One  terminal.</h1>
+                    <h1 className=" text-5xl md:text-[56px] lg:text-[72px] leading-[120%] md:leading-[110%] font-jakarta text-[#000000]  " >Every  customer.<br />Every  payment.<br />One  terminal.</h1>
 
-                    <p className="font-sora text-base md:text-xl text-[#000000]  " >Stop turning away crypto customers.
+                    <p className="font-sora text-lg md:text-xl text-[#000000]  " >Stop turning away crypto customers.
                         UnioGate lets
                         your business accept stablecoins as easily as any other payment — built for vendors,
                         not traders.</p>
@@ -54,19 +55,29 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
 
                 {/* The right side  */}
-                <div className="w-full max-w-[80%] md:max-w-[57%]  h-full relative flex items-end justify-center " >
+                <div className="w-full  md:max-w-155  h-full relative flex flex-col items-end justify-center overflow-y-hidden " >
 
-                    <div className="bg-[#253E86] shadow-[0px_4px_20px_10px_rgba(0,0,0,0.25)] h-[70%] w-full absolute max-w-[609px] rounded-t-[70px] " >
+                    <div className="bg-[#253E86] shadow-[0px_4px_20px_10px_rgba(0,0,0,0.25)] h-[70%] w-full max-w-[99%] absolute bottom-0 left-[50%] translate-x-[-50%] md:max-w-152.25 rounded-t-[70px] " >
 
                     </div>
 
 
-                    <Image
-                        src={"/landing-page-images/phone.png"}
-                        loading="eager"
-                        alt="phone" height={1000} width={1000}
-                        className=" w-full max-w-[320px] md:w-[528.8px] h-auto md:h-175 object-contain z-10 "
-                    />
+                    <motion.span
+                        initial={{ y: 100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut",
+                        }}
+                        className="z-10 mx-auto w-70 md:w-[528.8px] h-auto md:h-175">
+
+                        <Image
+                            src={"/landing-page-images/phone.png"}
+                            loading="eager"
+                            alt="phone" height={1000} width={1000}
+                            className=" h-full w-full  object-contain object-center "
+                        />
+                    </motion.span>
                 </div>
 
 

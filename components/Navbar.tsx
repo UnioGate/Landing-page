@@ -10,7 +10,7 @@ export default function Navbar() {
 
 
 
-            <div className="bg-[#253E86] text-[#FFFFFF] py-1.5 md:py-2.5 px-3 md:px-5 rounded-[20px] text-xs md:text-[15px] font-sora text-center " >
+            <div className="bg-[#253E86] text-[#FFFFFF] py-2 md:py-2.5 px-3 md:px-5 rounded-[20px] text-sm md:text-[15px] font-sora text-center " >
                 Coming soon
             </div>
         </nav>

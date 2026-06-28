@@ -41,7 +41,7 @@ export default function Features() {
             </div>
 
             {/* point 3 */}
-            <div className="w-full flex flex-col items-start gap-5  px-6 md:px-15.25 py-10 md:py-15  border-[#10182A] md:border-r-[0.5px]" >
+            <div className="w-full flex flex-col items-start gap-5  px-6 md:px-15.25 py-10 md:py-15 border-b-[0.5px] md:border-b-0 border-[#10182A] md:border-r-[0.5px]" >
                 <span className="bg-[#253E86] rounded-[20px]  size-15 flex items-center justify-center " >
                     <BuildingIcon />
                 </span>
@@ -57,7 +57,7 @@ export default function Features() {
 
 
             {/* point 4  */}
-            <div className="w-full flex flex-col items-start gap-5  px-6 md:px-15.25 py-10 md:py-15  " >
+            <div className="w-full flex flex-col items-start gap-5 border-b-[0.5px] md:border-b-0 px-6 md:px-15.25 py-10 md:py-15  " >
                 <span className="bg-[#253E86] rounded-[20px]  size-15 flex items-center justify-center " >
                     <LinkIcon />
                 </span>
