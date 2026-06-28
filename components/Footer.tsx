@@ -20,7 +20,7 @@ export default function Footer() {
                     delay: 0,
                 }}
                 viewport={{ once: true }}
-                className="absolute top-0 left-0  h-full bg-red-500 backdrop-blur-2xl  " />
+                className="absolute top-0 left-0  h-full  backdrop-blur-2xl  " />
 
             <div className="flex items-center gap-8 md:gap-16.25 flex-row ">
                 <Link href={"#"} className="text-lg md:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150 " >

@@ -66,7 +66,7 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
                         initial={{ y: 100, }}
                         animate={{ y: 20, }}
                         transition={{
-                            duration: 0.8,
+                            duration: 0.5,
                             ease: "easeOut",
                         }}
                         className="z-10 mx-auto w-70 md:w-[528.8px] h-auto md:h-175  self-end">
