@@ -69,7 +69,7 @@ export default function Hero() {
 
 
     return (
-        <section className="w-full min-h-screen lg:h-screen pt-6  md:pt-10  flex flex-col  " >
+        <section className="w-full min-h-screen lg:h-screen pt-6  md:pt-10  flex flex-col relative  " >
             <Navbar />
 
 
@@ -152,6 +152,14 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
             <ScrollingText />
 
+
+
+            <Image
+                src={"/landing-page-images/hero-bg.png"}
+                width={1000} height={1000}
+                alt="background"
+                className="w-full h-full absolute bottom-0 left-0  z-0 "
+            />
         </section>
     )
 }
