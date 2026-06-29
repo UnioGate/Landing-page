@@ -79,7 +79,7 @@ export default function Hero() {
 
 
                 {/* the left side  */}
-                <div className=" w-full flex flex-col md:max-w-7xl lg:max-w-xl gap-5 items-start mt-10 md:mt-25 " >
+                <div className=" w-full flex flex-col md:max-w-7xl lg:max-w-xl gap-5 items-start mt-10 md:mt-25 z-10" >
 
                     <h4 className="font-sora text-sm md:text-base text-[#000000] font-normal py-2.5 px-5
                      border-[0.7px] border-[#000000] rounded-[20px] w-fit " >

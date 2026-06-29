@@ -40,8 +40,7 @@ export default function Features() {
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
             className="grid grid-cols-1 md:grid-cols-2 w-full overflow-hidden"
-        >``
-
+        >
             {/* Point 1 */}
             <motion.div
                 variants={cardVariants}
