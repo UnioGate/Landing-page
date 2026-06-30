@@ -130,10 +130,11 @@ p-2.5 text-center rounded-[10px] shrink-0 cursor-pointer
 
                     <motion.span
                         initial={{ y: 800, }}
-                        whileInView={{ y: 20, }}
+                        animate={{ y: 20, }}
                         transition={{
                             duration: 0.5,
                             ease: "easeOut",
+                            delay: 2.6
                         }}
                         className="z-10 mx-auto w-70 md:w-[528.8px] h-auto md:h-175  self-end">
 
