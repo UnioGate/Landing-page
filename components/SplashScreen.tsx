@@ -60,22 +60,22 @@ export default function SplashScreen({
                                 alt="Uniogate"
                                 width={77}
                                 height={77}
-                                className="object-contain"
+                                className="size-15 md:size-19.25  object-contain"
                             />
                         </motion.div>
 
                         <motion.div
                             initial={{ width: 0 }}
                             animate={{
-                                width: showText ? "245px" : 0,
+                                width: showText ? "auto" : 0,
                             }}
                             transition={{
                                 duration: .7,
                                 ease: "easeOut",
                             }}
-                            className="overflow-hidden whitespace-nowrap"
+                            className="overflow-hidden whitespace-nowrap py-4"
                         >
-                            <h1 className="font-bold text-2xl md:text-[48px] text-[#233F88] font-jakarta  ">
+                            <h1 className="font-bold text-4xl md:text-[48px] text-[#233F88] font-jakarta  ">
                                 Uniogate
                             </h1>
                         </motion.div>
