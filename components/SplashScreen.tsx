@@ -76,7 +76,7 @@ export default function SplashScreen({
                             className="overflow-hidden whitespace-nowrap py-4"
                         >
                             <h1 className="font-bold text-4xl md:text-[48px] text-[#233F88] font-jakarta  ">
-                                Uniogate
+                                UnioGate
                             </h1>
                         </motion.div>
 
