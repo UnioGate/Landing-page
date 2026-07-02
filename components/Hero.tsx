@@ -12,6 +12,7 @@ import Loader from "./Loader";
 
 
 
+
 export default function Hero() {
     const [email, setEmail] = useState("")
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -57,8 +58,25 @@ export default function Hero() {
             if (insertError) {
                 toast.error(insertError.message);
             } else {
-                toast.success("Successfully joined the waitlist!");
-                setEmail("");
+                // send confirmation email
+                const confirmationResult = await fetch("/api/send", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email }),
+                });
+
+                const result = await confirmationResult.json();
+
+
+                if (confirmationResult.ok) {
+                    toast.success("Successfully joined the waitlist!");
+                    setEmail("");
+                    toast.success("Confirmation Email sent");
+                } else {
+                    toast.error("Failed to send confirmation email");
+                }
             }
         } catch (err) {
             console.error(err);
