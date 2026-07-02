@@ -69,14 +69,9 @@ export default function Hero() {
 
                 const result = await confirmationResult.json();
 
-
-                if (confirmationResult.ok) {
-                    toast.success("Successfully joined the waitlist!");
-                    setEmail("");
-                    toast.success("Confirmation Email sent");
-                } else {
-                    toast.error("Failed to send confirmation email");
-                }
+                toast.success("Successfully joined the waitlist!");
+                setEmail("");
+                toast.success("Confirmation Email sent");
             }
         } catch (err) {
             console.error(err);

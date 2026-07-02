@@ -8,9 +8,9 @@ export async function sendConfirmationEmail(email: string) {
     const html = render(EmailTemplate({ email }));
 
     const { data, error } = await resend.emails.send({
-        from: 'Acme <onboarding@resend.dev>',
+        from: 'support@uniogate.com',
         to: email,
-        subject: 'Hello world',
+        subject: "You're on the list! Welcome to UnioGate 🎉",
         react: EmailTemplate({ email })
     });
 
