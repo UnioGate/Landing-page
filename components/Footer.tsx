@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import TrademarkIcon from "./icons/TrademarkIcon"
 import { motion } from "framer-motion"
@@ -23,11 +25,11 @@ export default function Footer() {
                 className="absolute top-0 left-0  h-full  backdrop-blur-xl  " />
 
             <div className="flex items-center gap-8 md:gap-16.25 flex-row ">
-                <Link href={"#"} className="text-lg md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150 " >
+                <Link href={"/privacy"} className="text-lg md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150 " >
                     Privacy
                 </Link>
 
-                <Link href={"#"} className="text-lg  md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150" >
+                <Link href={"/terms"} className="text-lg  md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150" >
                     Terms
                 </Link>
 
