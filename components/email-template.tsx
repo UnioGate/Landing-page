@@ -9,14 +9,14 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
         <div
             style={{
                 backgroundColor: "#EEF0F7",
-                padding: "40px 20px",
+                padding: "40px 10px",
                 fontFamily:
                     "'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
             }}
         >
             <div
                 style={{
-                    maxWidth: "600px",
+                    maxWidth: "700px",
                     margin: "0 auto",
                     backgroundColor: "#ffffff",
                     borderRadius: "16px",
@@ -33,7 +33,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                     }}
                 >
                     <img
-                        src="https://res.cloudinary.com/dwedz2laa/image/upload/v1782998739/aeetp41xs8bhwzwi88sf.jpg"
+                        src="https://res.cloudinary.com/dwedz2laa/image/upload/v1783003148/h0bsrojk4zdwcjbmtvku.png"
                         alt="UnioGate"
                         width={180}
                         height={50}
@@ -58,8 +58,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                 </div>
 
                 {/* Body */}
-                {/* Body */}
-                <div style={{ padding: "40px" }}>
+                <div style={{ padding: "20px" }}>
                     <h2
                         style={{
                             margin: 0,
