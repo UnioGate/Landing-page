@@ -315,7 +315,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                             </span>
                             <br />
                             <a
-                                href="https://www.uniogate.com/unsubscribe"
+                                href={`https://www.uniogate.com/unsubscribe?email=${encodeURIComponent(email)}`}
                                 style={{ color: muted, textDecoration: "underline" }}
                             >
                                 Unsubscribe

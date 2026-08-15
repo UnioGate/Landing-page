@@ -32,7 +32,7 @@ export default function Hero() {
             // Check if email already exists
             const { data: existingEmail, error: fetchError } = await supabase
                 .from("waitlist")
-                .select("id")
+                .select("id, unsubscribed")
                 .eq("email", email.trim())
                 .maybeSingle();
 
@@ -43,7 +43,23 @@ export default function Hero() {
             }
 
             if (existingEmail) {
-                toast.error("Email already exists.");
+                // Someone who unsubscribed is opting back in, not a duplicate.
+                if (existingEmail.unsubscribed) {
+                    const { error: resubError } = await supabase
+                        .from("waitlist")
+                        .update({ unsubscribed: false, unsubscribed_at: null })
+                        .eq("id", existingEmail.id);
+
+                    if (resubError) {
+                        toast.error(resubError.message);
+                    } else {
+                        toast.success("Welcome back — you're subscribed again.");
+                        setEmail("");
+                    }
+                } else {
+                    toast.error("Email already exists.");
+                }
+
                 setIsSubmitting(false);
                 return;
             }

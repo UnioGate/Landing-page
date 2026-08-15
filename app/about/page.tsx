@@ -23,6 +23,7 @@ const team: Member[] = [
         id: "chidile",
         name: "Chidile Ozoemena",
         role: "Founder & CEO",
+        photo: "https://raw.githubusercontent.com/AfroTechBoss/images/main/4.png",
         x: "https://x.com/0xAfroTechBoss",
         linkedin: "https://www.linkedin.com/in/chidileozoemena/",
     },
