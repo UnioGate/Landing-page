@@ -41,8 +41,8 @@ const channels = [
         icon: <LinkIcon />,
         title: "Follow the build",
         body: "Product notes, launch dates and beta invitations, posted as they happen.",
-        href: "https://x.com/uniogate",
-        link: "@uniogate on X",
+        href: "https://x.com/uniogateapp",
+        link: "@uniogateapp on X",
     },
 ];
 
