@@ -30,12 +30,12 @@ jobs:
       - name: Query Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
         run: |
           set -euo pipefail
 
-          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
-            echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY must be set as repository secrets."
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_PUBLISHABLE_KEY:-}" ]; then
+            echo "::error::SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY must be set as repository secrets."
             exit 1
           fi
 
@@ -46,8 +46,8 @@ jobs:
           for attempt in 1 2 3; do
             echo "Attempt $attempt..."
             code=$(curl -sS --max-time 30 -o /tmp/body -w '%{http_code}' \
-              -H "apikey: ${SUPABASE_ANON_KEY}" \
-              -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+              -H "apikey: ${SUPABASE_PUBLISHABLE_KEY}" \
+              -H "Authorization: Bearer ${SUPABASE_PUBLISHABLE_KEY}" \
               "$url") || code="000"
 
             if [ "$code" = "200" ]; then
@@ -58,7 +58,7 @@ jobs:
             echo "Got HTTP $code"
             # Don't leak the response body into public logs on auth failures.
             if [ "$code" = "401" ] || [ "$code" = "403" ]; then
-              echo "::error::Supabase rejected the key ($code). Rotate or re-add the SUPABASE_ANON_KEY secret."
+              echo "::error::Supabase rejected the key ($code). Rotate or re-add the SUPABASE_PUBLISHABLE_KEY secret."
               exit 1
             fi
 
