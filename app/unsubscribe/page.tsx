@@ -9,24 +9,29 @@ import Loader from "@/components/Loader";
 
 type Status = "idle" | "done" | "notfound";
 
+const GENERIC_ERROR =
+    "We couldn't do that just now. Please try again in a moment, or email support@uniogate.com and we'll take you off the list.";
+
 function UnsubscribeCard() {
     const searchParams = useSearchParams();
     const [email, setEmail] = useState(searchParams.get("email") ?? "");
     const [status, setStatus] = useState<Status>("idle");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [confirmed, setConfirmed] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const typed = email.trim();
         if (!typed) {
-            toast.error("Please enter your email");
+            setError("Please enter your email address.");
             return;
         }
 
         setIsSubmitting(true);
         setStatus("idle");
+        setError("");
 
         try {
             // The waitlist form stores the address as typed, so match both the
@@ -37,8 +42,16 @@ function UnsubscribeCard() {
                 .in("email", Array.from(new Set([typed, typed.toLowerCase()])))
                 .limit(1);
 
+            // Database errors are for the logs, never for the visitor.
+            // Spread the fields — a PostgrestError logs as `{}` on its own.
             if (fetchError) {
-                toast.error(fetchError.message);
+                console.error("unsubscribe lookup failed", {
+                    message: fetchError.message,
+                    code: fetchError.code,
+                    details: fetchError.details,
+                    hint: fetchError.hint,
+                });
+                setError(GENERIC_ERROR);
                 return;
             }
 
@@ -46,6 +59,7 @@ function UnsubscribeCard() {
 
             if (!existing) {
                 setStatus("notfound");
+                setError("Not on our list. Check the spelling and try again.");
                 return;
             }
 
@@ -61,7 +75,13 @@ function UnsubscribeCard() {
                 .eq("id", existing.id);
 
             if (updateError) {
-                toast.error(updateError.message);
+                console.error("unsubscribe update failed", {
+                    message: updateError.message,
+                    code: updateError.code,
+                    details: updateError.details,
+                    hint: updateError.hint,
+                });
+                setError(GENERIC_ERROR);
                 return;
             }
 
@@ -70,7 +90,7 @@ function UnsubscribeCard() {
             toast.success("You've been unsubscribed.");
         } catch (err) {
             console.error(err);
-            toast.error("Something went wrong. Please try again.");
+            setError(GENERIC_ERROR);
         } finally {
             setIsSubmitting(false);
         }
@@ -146,15 +166,22 @@ function UnsubscribeCard() {
                     onChange={(e) => {
                         setEmail(e.target.value);
                         if (notFound) setStatus("idle");
+                        if (error) setError("");
                     }}
                     placeholder="you@yourbusiness.com"
+                    aria-invalid={error ? true : undefined}
+                    aria-describedby={error ? "unsub-email-error" : undefined}
                     className={`w-full rounded-[10px] border-[0.7px] px-3 py-3 font-sora text-[15px] text-black outline-0 focus:outline-0 ${
-                        notFound ? "border-[#B4453B]" : "border-[#5C5050]"
+                        error ? "border-[#B4453B]" : "border-[#5C5050]"
                     }`}
                 />
-                {notFound ? (
-                    <p className="font-sora text-[13px] text-[#B4453B]">
-                        Not on our list. Check the spelling and try again.
+                {error ? (
+                    <p
+                        id="unsub-email-error"
+                        role="alert"
+                        className="font-sora text-[13px] leading-5 text-[#B4453B]"
+                    >
+                        {error}
                     </p>
                 ) : null}
             </div>
