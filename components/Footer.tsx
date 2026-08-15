@@ -24,21 +24,20 @@ export default function Footer() {
                 viewport={{ once: true }}
                 className="absolute top-0 left-0  h-full  backdrop-blur-xl  " />
 
-            <div className="flex items-center gap-8 md:gap-16.25 flex-row ">
-                <Link href={"/privacy"} className="text-lg md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150 " >
-                    Privacy
-                </Link>
-
-                <Link href={"/terms"} className="text-lg  md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150" >
-                    Terms
-                </Link>
-
-
-                <Link href={"#"} className="text-lg  md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150" >
-                    Contact
-                </Link>
-
-
+            <div className="flex items-center justify-center gap-5 md:gap-10 lg:gap-14 flex-row flex-wrap ">
+                {[
+                    ["/contact", "Contact"],
+                    ["/privacy", "Privacy"],
+                    ["/terms", "Terms"],
+                ].map(([href, label]) => (
+                    <Link
+                        key={href}
+                        href={href}
+                        className="text-lg md:text-xl lg:text-2xl font-sora font-light hover:text-[#253E86] transition-all duration-150"
+                    >
+                        {label}
+                    </Link>
+                ))}
             </div>
 
             <div className="flex items-center gap-4 flex-row " >
