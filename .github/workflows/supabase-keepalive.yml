@@ -1,0 +1,116 @@
+name: Supabase keepalive
+
+# Supabase pauses free-tier projects after 7 days without activity. A read
+# query every 3 days resets that clock with room to spare for a missed run.
+#
+# The second job commits a timestamp so the repository never looks idle —
+# GitHub disables scheduled workflows after 60 days of repository inactivity,
+# which would silently kill the keepalive and let the database pause anyway.
+
+on:
+  schedule:
+    # 06:17 UTC on days 1, 4, 7 ... 28, 31 of each month. The step resets at
+    # the month boundary, which only ever shortens the gap — never past 3 days.
+    - cron: "17 6 */3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: supabase-keepalive
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Query Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_PUBLISHABLE_KEY:-}" ]; then
+            echo "::error::SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY must be set as repository secrets."
+            exit 1
+          fi
+
+          # Hit a real table — the point is to touch the database, not just the
+          # gateway. `select=id&limit=1` is the cheapest read that does that.
+          url="${SUPABASE_URL%/}/rest/v1/waitlist?select=id&limit=1"
+
+          for attempt in 1 2 3; do
+            echo "Attempt $attempt..."
+            code=$(curl -sS --max-time 30 -o /tmp/body -w '%{http_code}' \
+              -H "apikey: ${SUPABASE_PUBLISHABLE_KEY}" \
+              -H "Authorization: Bearer ${SUPABASE_PUBLISHABLE_KEY}" \
+              "$url") || code="000"
+
+            if [ "$code" = "200" ]; then
+              echo "Supabase responded 200 — project is awake."
+              exit 0
+            fi
+
+            echo "Got HTTP $code"
+            # Don't leak the response body into public logs on auth failures.
+            if [ "$code" = "401" ] || [ "$code" = "403" ]; then
+              echo "::error::Supabase rejected the key ($code). Rotate or re-add the SUPABASE_PUBLISHABLE_KEY secret."
+              exit 1
+            fi
+
+            # Must be an `if` — a bare `[ ] &&` that tests false on the last
+            # pass would trip `set -e` and skip the error report below.
+            if [ "$attempt" -lt 3 ]; then sleep 20; fi
+          done
+
+          echo "::error::Supabase did not return 200 after 3 attempts (last: $code)."
+          head -c 500 /tmp/body || true
+          exit 1
+
+  heartbeat:
+    # Runs even if the ping failed — a paused database is exactly when the
+    # workflow most needs to stay enabled.
+    needs: ping
+    if: ${{ always() && github.event_name == 'schedule' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Record the run
+        run: |
+          set -euo pipefail
+
+          printf 'Last Supabase keepalive: %s\nPing result: %s\n' \
+            "$(date -u '+%Y-%m-%d %H:%M UTC')" \
+            "${{ needs.ping.result }}" > .github/keepalive.txt
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/keepalive.txt
+
+          if git diff --cached --quiet; then
+            echo "Nothing changed — skipping commit."
+            exit 0
+          fi
+
+          git commit -m "chore: supabase keepalive heartbeat [skip ci]"
+
+          # Someone may have pushed between checkout and now; rebase and retry
+          # rather than failing the run over a race.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Heartbeat pushed."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt) — rebasing."
+            git pull --rebase --autostash
+          done
+
+          echo "::error::Could not push the heartbeat after 3 attempts."
+          exit 1

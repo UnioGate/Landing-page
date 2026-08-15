@@ -1,7 +1,9 @@
 import * as React from "react";
 
-interface EmailTemplateProps {
-    email: string;
+interface ContactAckTemplateProps {
+    name: string;
+    message: string;
+    topic?: string;
 }
 
 const font = "Arial, Helvetica, sans-serif";
@@ -26,12 +28,12 @@ const cell = (extra: React.CSSProperties = {}): React.CSSProperties => ({
 });
 
 const steps = [
-    ["01", "Your place on the waitlist is confirmed."],
-    ["02", "Occasional updates as we build UnioGate."],
-    ["03", "An invitation when early access opens."],
+    ["01", "Your message is with the team."],
+    ["02", "A reply to this address within one business day."],
+    ["03", "Anything urgent? Just reply to this email."],
 ];
 
-export function EmailTemplate({ email }: EmailTemplateProps) {
+export function ContactAckTemplate({ name, message, topic }: ContactAckTemplateProps) {
     return (
         <div style={{ backgroundColor: "#e4e7f0", padding: "32px 16px", fontFamily: font }}>
             {/* Preheader — previews next to the subject line, hidden in the body */}
@@ -47,7 +49,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                     overflow: "hidden",
                 }}
             >
-                You&apos;re on the UnioGate waitlist — here&apos;s what happens next.
+                We&apos;ve got your message — a reply is on the way within one business day.
             </span>
 
             <table
@@ -103,7 +105,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                     color: ink,
                                 }}
                             >
-                                You&apos;re on the waitlist.
+                                We got your message.
                             </h1>
                             <p
                                 style={{
@@ -114,13 +116,14 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                     color: body,
                                 }}
                             >
-                                Thanks for joining the UnioGate waitlist. Your email has been recorded, and
-                                we&apos;ll write to you as we make progress toward launch.
+                                Hi {name}, thanks for reaching out to UnioGate
+                                {topic ? <> about {topic.toLowerCase()}</> : null}. A member of the team
+                                will reply to this address within one business day.
                             </p>
                         </td>
                     </tr>
 
-                    {/* Registered email */}
+                    {/* Their message, quoted back */}
                     <tr>
                         <td style={cell({ padding: "24px 40px 0 40px" })}>
                             <table
@@ -134,18 +137,20 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                 <tbody>
                                     <tr>
                                         <td style={cell({ padding: "18px 20px", borderLeft: `4px solid ${navy}` })}>
-                                            <div style={{ ...label, color: muted }}>Registered email</div>
+                                            <div style={{ ...label, color: muted }}>
+                                                {topic ? topic : "Your message"}
+                                            </div>
                                             <div
                                                 style={{
                                                     marginTop: "6px",
                                                     fontFamily: font,
-                                                    fontSize: "16px",
-                                                    lineHeight: "22px",
-                                                    fontWeight: 700,
+                                                    fontSize: "15px",
+                                                    lineHeight: "24px",
                                                     color: ink,
+                                                    whiteSpace: "pre-wrap",
                                                 }}
                                             >
-                                                {email}
+                                                {message}
                                             </div>
                                         </td>
                                     </tr>
@@ -154,7 +159,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                         </td>
                     </tr>
 
-                    {/* What to expect */}
+                    {/* What happens next */}
                     <tr>
                         <td style={cell({ padding: "36px 40px 0 40px" })}>
                             <div
@@ -165,7 +170,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                     borderBottom: `2px solid ${navy}`,
                                 }}
                             >
-                                What to expect
+                                What happens next
                             </div>
                             <table
                                 role="presentation"
@@ -270,9 +275,9 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                     color: muted,
                                 }}
                             >
-                                Didn&apos;t request this? You can safely ignore this email.
+                                Didn&apos;t contact UnioGate? You can safely ignore this email.
                                 <br />
-                                Questions? Reply here or write to{" "}
+                                Need to add something? Reply here or write to{" "}
                                 <a
                                     href="mailto:support@uniogate.com"
                                     style={{ color: navy, textDecoration: "underline" }}
@@ -314,13 +319,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                 UnioGate, Ikeja, Lagos, Nigeria 100001 
                             </span>
                             <br />
-                            <a
-                                href={`https://www.uniogate.com/unsubscribe?email=${encodeURIComponent(email)}`}
-                                style={{ color: muted, textDecoration: "underline" }}
-                            >
-                                Unsubscribe
-                            </a>{" "}
-                            from waitlist updates.
+                            You received this because you sent us a message at uniogate.com/contact.
                         </td>
                     </tr>
                 </tbody>
