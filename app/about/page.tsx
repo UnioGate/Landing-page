@@ -53,7 +53,8 @@ const team: Member[] = [
     {
         id: "onyedikachi",
         name: "Onyedikachi Ike",
-        role: "Brand Designer & SMM",
+        role: "Brand Designer",
+        photo: "https://raw.githubusercontent.com/AfroTechBoss/images/main/5.png",
         x: "#",
         linkedin: "https://linkedin.com/in/onyedikachi-ike",
     },
