@@ -29,6 +29,7 @@ export default function Footer() {
                     ["/contact", "Contact"],
                     ["/privacy", "Privacy"],
                     ["/terms", "Terms"],
+                    ["https://expo.dev/artifacts/eas/_SRpRxq7yFt-CC8UjAs0mxK2-skNwK3foNCize1d4EM.apk", "Demo"],
                 ].map(([href, label]) => (
                     <Link
                         key={href}

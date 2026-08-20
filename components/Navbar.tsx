@@ -36,9 +36,11 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-3 " >
-                <div className="bg-[#253E86] text-[#FFFFFF] py-2 md:py-2.5 px-3 md:px-5 rounded-[20px] text-sm md:text-[15px] font-sora text-center " >
-                    Coming soon
-                </div>
+                <Link href={"https://expo.dev/artifacts/eas/_SRpRxq7yFt-CC8UjAs0mxK2-skNwK3foNCize1d4EM.apk"} >
+                    <button className="bg-[#253E86] text-[#FFFFFF] py-2 md:py-2.5 px-3 md:px-5 rounded-[20px] text-sm md:text-[15px] font-sora text-center cursor-pointer " >
+                        Download Demo
+                    </button>
+                </Link>
 
                 <button
                     type="button"
