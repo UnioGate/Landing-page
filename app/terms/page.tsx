@@ -4,12 +4,36 @@ import LegalLayout, { LegalSection } from "@/components/LegalLayout";
 export const metadata: Metadata = {
     title: "Terms of Service",
     description:
-        "The terms governing your use of the UnioGate pre-launch waitlist site.",
+        "The terms governing your use of the UnioGate pre-launch site, waitlist, and demo app.",
 };
 
 const bold = "font-medium text-[#000000]";
 const link = "text-[#253E86] underline hover:text-[#10182A]";
 const list = "list-disc pl-6 flex flex-col gap-2";
+
+// LegalLayout numbers sections by array position, so in-body references like
+// "Section 4" have to track that order. Derive them from the ids instead of
+// hardcoding, or inserting a section silently misnumbers every reference after it.
+const ORDER = [
+    "acceptance",
+    "eligibility",
+    "the-waitlist",
+    "demo-app",
+    "not-a-financial-service",
+    "acceptable-use",
+    "intellectual-property",
+    "third-party-services",
+    "no-warranty",
+    "limitation-of-liability",
+    "indemnification",
+    "termination",
+    "governing-law",
+    "future-terms",
+    "changes",
+    "contact",
+] as const;
+
+const no = (id: (typeof ORDER)[number]) => ORDER.indexOf(id) + 1;
 
 const sections: LegalSection[] = [
     {
@@ -18,9 +42,10 @@ const sections: LegalSection[] = [
         body: (
             <>
                 <p>
-                    By visiting this Site or submitting your email through our waitlist
-                    form, you confirm that you have read, understood, and agree to be bound
-                    by these Terms, and by our{" "}
+                    By visiting this Site, submitting your email through our waitlist form,
+                    sending us a message through our contact form, or downloading the demo
+                    build of the UnioGate app, you confirm that you have read, understood,
+                    and agree to be bound by these Terms, and by our{" "}
                     <a href="/privacy" className={link}>
                         Privacy Policy
                     </a>
@@ -83,8 +108,80 @@ const sections: LegalSection[] = [
                     </li>
                 </ul>
                 <p>
-                    We may modify, pause, or discontinue the waitlist at any time, for any
-                    reason, without notice or liability to you.
+                    You can leave the waitlist at any time, without asking us: use the
+                    unsubscribe link in any email we send, or go to{" "}
+                    <a href="/unsubscribe" className={link}>
+                        uniogate.com/unsubscribe
+                    </a>
+                    . We may also modify, pause, or discontinue the waitlist at any time,
+                    for any reason, without notice or liability to you.
+                </p>
+            </>
+        ),
+    },
+    {
+        id: "demo-app",
+        title: "The Demo Application",
+        body: (
+            <>
+                <p>
+                    This Site offers a downloadable demo build of the UnioGate Android
+                    application (the &ldquo;Demo&rdquo;). The Demo is made available for
+                    evaluation and feedback only. By downloading or using it, you agree to
+                    the following.
+                </p>
+                <ul className={list}>
+                    <li>
+                        <span className={bold}>It is a preview, not the product.</span> The
+                        Demo is an unfinished, pre-release build. It is not the launched
+                        UnioGate product, features shown in it may change or be removed
+                        entirely, and nothing in it should be relied on as a description of
+                        what the final product will do.
+                    </li>
+                    <li>
+                        <span className={bold}>It does not process real payments.</span> The
+                        Demo does not move, hold, convert, or settle real money or
+                        cryptocurrency. Do not attempt to use it to accept payment from a
+                        real customer, and do not enter real wallet keys, card details, or
+                        banking credentials into it.
+                    </li>
+                    <li>
+                        <span className={bold}>You install it at your own risk.</span>{" "}
+                        The Demo is distributed as an installable Android package file hosted by
+                        a third-party build service, not through the Google Play Store.
+                        Installing software from outside an app store requires you to change
+                        your device&apos;s settings, and it is your responsibility to decide
+                        whether you are willing to do that. You are responsible for your own
+                        device, its security, and any data on it.
+                    </li>
+                    <li>
+                        <span className={bold}>It may stop working at any time.</span> The
+                        download link may expire and the Demo may be withdrawn, disabled, or
+                        replaced without notice. We are under no obligation to keep it
+                        available, to support it, to fix defects in it, or to provide
+                        updates.
+                    </li>
+                    <li>
+                        <span className={bold}>Limited licence.</span> We grant you a
+                        personal, revocable, non-exclusive, non-transferable licence to
+                        install and run the Demo to evaluate it. You may not redistribute,
+                        sell, rent, sublicense, publish, modify, decompile, or reverse
+                        engineer it, except to the extent applicable law expressly permits
+                        you to do so regardless of this restriction.
+                    </li>
+                </ul>
+                <p>
+                    The Demo is covered by the same disclaimers and liability limits as the
+                    rest of the Site — see{" "}
+                    <a href="#no-warranty" className={link}>
+                        Section {no("no-warranty")}
+                    </a>{" "}
+                    and{" "}
+                    <a href="#limitation-of-liability" className={link}>
+                        Section {no("limitation-of-liability")}
+                    </a>{" "}
+                    — and, being pre-release software, is provided with no warranty of any
+                    kind whatsoever.
                 </p>
             </>
         ),
@@ -100,6 +197,16 @@ const sections: LegalSection[] = [
                     cryptocurrency and fiat payments. That product has{" "}
                     <span className={bold}>not yet launched</span>, and this Site does not
                     offer it.
+                </p>
+                <p>
+                    The Demo described in{" "}
+                    <a href="#demo-app" className={link}>
+                        Section {no("demo-app")}
+                    </a>{" "}
+                    does not change this. It is an evaluation build that does not process
+                    real payments, does not hold or transmit funds, and is not a live
+                    financial service. Making it available for download is not an offer to
+                    provide payment services.
                 </p>
                 <p>This Site, and your use of it, does not:</p>
                 <ul className={list}>
@@ -127,7 +234,7 @@ const sections: LegalSection[] = [
                     pursued as appropriate before the UnioGate product itself launches, and
                     will be described in the terms governing that product. See{" "}
                     <a href="#future-terms" className={link}>
-                        Section 13
+                        Section {no("future-terms")}
                     </a>
                     .
                 </p>
@@ -149,6 +256,14 @@ const sections: LegalSection[] = [
                         Use automated means (bots, scrapers, or scripts) to submit waitlist
                         entries, scrape Site content, or otherwise interact with the Site at
                         a scale or in a manner a human would not;
+                    </li>
+                    <li>
+                        Use the contact form to send spam, advertising, abusive or
+                        threatening content, or to impersonate another person or business;
+                    </li>
+                    <li>
+                        Redistribute, repackage, or publish the Demo build, or present it as
+                        a released UnioGate product;
                     </li>
                     <li>
                         Attempt to gain unauthorized access to the Site, our systems, or our
@@ -191,13 +306,27 @@ const sections: LegalSection[] = [
         id: "third-party-services",
         title: "Third-Party Services and Links",
         body: (
-            <p>
-                This Site relies on third-party infrastructure providers (including
-                Supabase, for waitlist storage) to operate. We are not responsible for the
-                availability, content, or practices of third-party services we rely on or
-                link to, and your use of any such third-party service is subject to that
-                provider&apos;s own terms.
-            </p>
+            <>
+                <p>
+                    This Site relies on third-party providers to operate, including
+                    Supabase (database and backend infrastructure, used to store waitlist
+                    and contact form submissions), Resend (email delivery, used to send
+                    confirmation and acknowledgement emails), and Expo (which hosts the
+                    Demo build file that our download link points to).
+                </p>
+                <p>
+                    We are not responsible for the availability, content, or practices of
+                    third-party services we rely on or link to, and your use of any such
+                    third-party service is subject to that provider&apos;s own terms. In
+                    particular, the Demo download is served from Expo&apos;s systems rather
+                    than ours, and we do not control whether that link remains reachable.
+                    How these providers handle your information is described in our{" "}
+                    <a href="/privacy" className={link}>
+                        Privacy Policy
+                    </a>
+                    .
+                </p>
+            </>
         ),
     },
     {
@@ -205,12 +334,13 @@ const sections: LegalSection[] = [
         title: "No Warranty",
         body: (
             <p>
-                This Site is provided &ldquo;as is&rdquo; and &ldquo;as available,&rdquo;
-                without warranties of any kind, whether express, implied, or statutory,
-                including any implied warranties of merchantability, fitness for a
-                particular purpose, title, or non-infringement. We do not warrant that the
-                Site will be uninterrupted, error-free, or secure, or that any information
-                on it is accurate or complete.
+                This Site and the Demo are provided &ldquo;as is&rdquo; and &ldquo;as
+                available,&rdquo; without warranties of any kind, whether express, implied,
+                or statutory, including any implied warranties of merchantability, fitness
+                for a particular purpose, title, or non-infringement. We do not warrant
+                that the Site or the Demo will be uninterrupted, error-free, or secure,
+                that the Demo is free of defects or suitable for any purpose, or that any
+                information on this Site is accurate or complete.
             </p>
         ),
     },
@@ -224,8 +354,9 @@ const sections: LegalSection[] = [
                     founders, and team members will not be liable for any indirect,
                     incidental, special, consequential, or punitive damages, or any loss of
                     data, revenue, or goodwill, arising out of or related to your use of, or
-                    inability to use, this Site, even if we have been advised of the
-                    possibility of such damages.
+                    inability to use, this Site or the Demo — including any damage to a
+                    device, or loss of data on it, resulting from installing or running the
+                    Demo — even if we have been advised of the possibility of such damages.
                 </p>
                 <p>
                     Because this Site does not process payments, hold funds, or provide
@@ -328,15 +459,17 @@ export default function TermsOfServicePage() {
     return (
         <LegalLayout
             title="Terms of Service"
-            updated="June 29, 2026"
+            updated="August 21, 2026"
             sections={sections}
             intro={
                 <>
                     These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and
                     use of{" "}
-                    <span className="text-[#000000] font-medium">uniogate.com</span> and
-                    our &ldquo;Get Early Access&rdquo; waitlist (together, the
-                    &ldquo;Site&rdquo;), operated by UnioGate (&ldquo;UnioGate,&rdquo;
+                    <span className="text-[#000000] font-medium">uniogate.com</span>,
+                    including our &ldquo;Get Early Access&rdquo; waitlist, our contact
+                    form, and the demo build of the UnioGate app offered for download
+                    (together, the &ldquo;Site&rdquo;), operated by UnioGate
+                    (&ldquo;UnioGate,&rdquo;
                     &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By using the
                     Site, you agree to these Terms. If you do not agree, please do not use
                     the Site.
@@ -348,23 +481,24 @@ export default function TermsOfServicePage() {
                     The UnioGate product — a point-of-sale application enabling merchants to
                     accept crypto and fiat payments — has not yet launched. This Site is
                     currently a pre-launch &ldquo;coming soon&rdquo; page. These Terms
-                    govern only your use of <span className="italic">this Site</span> and
-                    the waitlist. They are <span className="italic">not</span> the terms of
-                    service for the future UnioGate application, and nothing here should be
-                    read as describing the terms under which UnioGate&apos;s payment product
-                    will eventually operate. See{" "}
+                    govern only your use of <span className="italic">this Site</span>, the
+                    waitlist, and the pre-release Demo build. They are{" "}
+                    <span className="italic">not</span>{" "}
+                    the terms of service for the future UnioGate application, and nothing here — including anything you see in
+                    the Demo — should be read as describing the terms under which
+                    UnioGate&apos;s payment product will eventually operate. See{" "}
                     <a
                         href="#not-a-financial-service"
                         className="text-[#253E86] underline hover:text-[#10182A]"
                     >
-                        Section 4
+                        Section {no("not-a-financial-service")}
                     </a>{" "}
                     and{" "}
                     <a
                         href="#future-terms"
                         className="text-[#253E86] underline hover:text-[#10182A]"
                     >
-                        Section 13
+                        Section {no("future-terms")}
                     </a>
                     .
                 </>

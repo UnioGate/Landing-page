@@ -4,12 +4,35 @@ import LegalLayout, { LegalSection } from "@/components/LegalLayout";
 export const metadata: Metadata = {
     title: "Privacy Policy",
     description:
-        "How UnioGate collects, uses, and protects your information on our pre-launch waitlist site.",
+        "How UnioGate collects, uses, and protects your information on our pre-launch site.",
 };
 
 const bold = "font-medium text-[#000000]";
 const link = "text-[#253E86] underline hover:text-[#10182A]";
 const list = "list-disc pl-6 flex flex-col gap-2";
+
+// LegalLayout numbers sections by array position, so in-body references like
+// "Section 6" have to track that order. Derive them from the ids instead of
+// hardcoding, or inserting a section silently misnumbers every reference after it.
+const ORDER = [
+    "who-we-are",
+    "info-we-collect",
+    "info-we-dont-collect",
+    "how-we-use",
+    "legal-basis",
+    "how-we-share",
+    "retention",
+    "cookies",
+    "security",
+    "international-transfers",
+    "your-rights",
+    "children",
+    "future-policy",
+    "changes",
+    "contact",
+] as const;
+
+const no = (id: (typeof ORDER)[number]) => ORDER.indexOf(id) + 1;
 
 const sections: LegalSection[] = [
     {
@@ -52,16 +75,27 @@ const sections: LegalSection[] = [
             <>
                 <p className={bold}>2.1 Information you give us directly</p>
                 <p>
-                    <span className={bold}>Email address.</span> When you submit our
-                    &ldquo;Get Early Access&rdquo; form, we collect the email address you
-                    provide. This is currently the <span className="italic">only</span>{" "}
-                    piece of personal information this Site asks you to submit. We store
-                    this in a waitlist database operated for us by our infrastructure
-                    provider, Supabase (see{" "}
+                    <span className={bold}>Waitlist email address.</span>{" "}
+                    When you submit our &ldquo;Get Early Access&rdquo; form, we collect the email address
+                    you provide, and nothing else. We store this in a waitlist database
+                    operated for us by our infrastructure provider, Supabase (see{" "}
                     <a href="#how-we-share" className={link}>
-                        Section 6
+                        Section {no("how-we-share")}
                     </a>
                     ).
+                </p>
+                <p>
+                    <span className={bold}>Contact form.</span>{" "}
+                    If you write to us through the contact form on this Site, we collect your name, your email
+                    address, and the message you write. You may also optionally tell us
+                    your business website, choose a subject for your enquiry, and select
+                    an approximate monthly payment volume band (for example,
+                    &ldquo;Under $10k&rdquo;). The volume band is a self-reported range
+                    that helps us understand what kind of businesses are interested in
+                    UnioGate — it is not a financial record, and we do not verify it or
+                    connect it to any account. Contact submissions are stored in the same
+                    Supabase database and are also emailed to our team so that we can
+                    reply.
                 </p>
                 <p>
                     <span className={bold}>Correspondence.</span> If you contact us
@@ -115,10 +149,22 @@ const sections: LegalSection[] = [
                     </li>
                 </ul>
                 <p>
+                    <span className={bold}>The demo app download.</span>{" "}
+                    The &ldquo;Download Demo&rdquo; link on this Site points to a build file
+                    hosted by Expo, a third-party service. We do not collect any personal
+                    information through that link ourselves, and this Site asks you for
+                    nothing in order to use it. Because the file is served by Expo rather
+                    than by us, Expo will receive the technical request data any download
+                    involves, such as your IP address, under its own privacy terms. The
+                    demo build is a separate application from this Site and is not covered
+                    by this Policy; if it collects information when you run it, that will
+                    be described in the terms presented with the product itself.
+                </p>
+                <p>
                     Several of these will change once the UnioGate product itself launches.
                     See{" "}
                     <a href="#future-policy" className={link}>
-                        Section 13
+                        Section {no("future-policy")}
                     </a>
                     .
                 </p>
@@ -136,7 +182,15 @@ const sections: LegalSection[] = [
                         Maintain our early-access waitlist and contact you about
                         UnioGate&apos;s launch, beta access, and related product updates;
                     </li>
-                    <li>Respond to questions or correspondence you send us directly;</li>
+                    <li>
+                        Send you a confirmation email when you join the waitlist, and an
+                        acknowledgement when you send us a message through the contact
+                        form;
+                    </li>
+                    <li>
+                        Read, respond to, and keep a record of enquiries you send us
+                        through the contact form or directly by email;
+                    </li>
                     <li>
                         Detect, investigate, and prevent abuse of our waitlist form (for
                         example, automated or fraudulent submissions);
@@ -154,7 +208,7 @@ const sections: LegalSection[] = [
                     We do not use your email address to send unrelated marketing on behalf
                     of third parties, and we do not sell your information. See{" "}
                     <a href="#how-we-share" className={link}>
-                        Section 6
+                        Section {no("how-we-share")}
                     </a>
                     .
                 </p>
@@ -177,7 +231,7 @@ const sections: LegalSection[] = [
                         us collecting and using it for the purposes described in this
                         Policy. You may withdraw this consent at any time (see{" "}
                         <a href="#your-rights" className={link}>
-                            Section 11
+                            Section {no("your-rights")}
                         </a>
                         ).
                     </li>
@@ -210,12 +264,26 @@ const sections: LegalSection[] = [
                 <ul className={list}>
                     <li>
                         <span className={bold}>Service providers (data processors).</span>{" "}
-                        We use Supabase, a third-party database and backend infrastructure
-                        provider, to store waitlist submissions on our behalf. Supabase
-                        processes this data only as instructed by us and is not permitted
-                        to use it for its own purposes. We may in future use additional
-                        infrastructure, email-delivery, or analytics providers under
-                        similar terms; if so, this Policy will be updated.
+                        We use a small number of third-party providers to operate this
+                        Site. Each processes data only as instructed by us and is not
+                        permitted to use it for its own purposes:
+                        <ul className="list-[circle] pl-6 flex flex-col gap-2 mt-2">
+                            <li>
+                                <span className={bold}>Supabase</span> — database and
+                                backend infrastructure, used to store waitlist email
+                                addresses and contact form submissions on our behalf.
+                            </li>
+                            <li>
+                                <span className={bold}>Resend</span> — email delivery, used
+                                to send your waitlist confirmation and contact
+                                acknowledgement emails. To do that, Resend necessarily
+                                receives your email address and the contents of the message
+                                we send you.
+                            </li>
+                        </ul>
+                        We may in future use additional infrastructure, email-delivery, or
+                        analytics providers under similar terms; if so, this Policy will be
+                        updated.
                     </li>
                     <li>
                         <span className={bold}>Legal and safety reasons.</span> We may
@@ -247,6 +315,25 @@ const sections: LegalSection[] = [
                     principally, so that we can contact you about UnioGate&apos;s launch.
                 </p>
                 <p>
+                    <span className={bold}>
+                        Unsubscribing is not the same as deletion.
+                    </span>{" "}
+                    When you unsubscribe, we mark your waitlist record so that we stop
+                    sending you email, but the record itself is retained. We keep it
+                    deliberately: it is how we remember not to email you again if the same
+                    address is submitted later. If you would rather we erased the record
+                    entirely, ask us and we will — see{" "}
+                    <a href="#your-rights" className={link}>
+                        Section {no("your-rights")}
+                    </a>
+                    .
+                </p>
+                <p>
+                    Messages sent through the contact form are retained for as long as we
+                    need them to handle your enquiry and keep a reasonable record of it,
+                    and are deleted on request.
+                </p>
+                <p>
                     If UnioGate&apos;s launch does not proceed, or if a significant period
                     passes without any product update (we consider 24 months without
                     contact from us a reasonable outer bound), we will either delete
@@ -254,7 +341,7 @@ const sections: LegalSection[] = [
                     renewed consent before continuing to hold it. You can also ask us to
                     delete your information at any time — see{" "}
                     <a href="#your-rights" className={link}>
-                        Section 11
+                        Section {no("your-rights")}
                     </a>
                     .
                 </p>
@@ -360,13 +447,27 @@ const sections: LegalSection[] = [
                         protection authority in your country of residence.
                     </li>
                 </ul>
+                <p className={`${bold} pt-2`}>Unsubscribing, without asking us</p>
                 <p>
-                    To exercise any of these rights, contact us using the details in{" "}
+                    You do not need to contact anyone to stop receiving our emails. Every
+                    email we send carries an unsubscribe link, and you can also go directly
+                    to{" "}
+                    <a href="/unsubscribe" className={link}>
+                        uniogate.com/unsubscribe
+                    </a>{" "}
+                    and enter your address. This takes effect immediately. If you change
+                    your mind, submitting the same address on the waitlist form puts you
+                    back on the list.
+                </p>
+                <p>
+                    To exercise any of the other rights above, contact us using the details
+                    in{" "}
                     <a href="#contact" className={link}>
-                        Section 15
+                        Section {no("contact")}
                     </a>
-                    . Because this Site currently only holds your email address, most
-                    requests (especially deletion) can typically be completed quickly.
+                    . Because this Site holds very little about you — an email address, and
+                    a contact message if you sent one — most requests, especially deletion,
+                    can typically be completed quickly.
                 </p>
             </>
         ),
@@ -432,7 +533,7 @@ const sections: LegalSection[] = [
                     If you have questions about this Policy, or want to exercise any of the
                     rights described in{" "}
                     <a href="#your-rights" className={link}>
-                        Section 11
+                        Section {no("your-rights")}
                     </a>
                     , please contact us at:
                 </p>
@@ -449,7 +550,7 @@ export default function PrivacyPolicyPage() {
     return (
         <LegalLayout
             title="Privacy Policy"
-            updated="June 29, 2026"
+            updated="August 21, 2026"
             sections={sections}
             intro={
                 <>
@@ -458,9 +559,9 @@ export default function PrivacyPolicyPage() {
                     explains what information we collect on this website, why we collect
                     it, how we use and protect it, and the choices and rights you have. It
                     applies to{" "}
-                    <span className="text-[#000000] font-medium">uniogate.com</span> and
-                    our &ldquo;Get Early Access&rdquo; waitlist (together, the
-                    &ldquo;Site&rdquo;).
+                    <span className="text-[#000000] font-medium">uniogate.com</span>,
+                    including our &ldquo;Get Early Access&rdquo; waitlist and our contact
+                    form (together, the &ldquo;Site&rdquo;).
                 </>
             }
             scopeNote={
@@ -468,8 +569,9 @@ export default function PrivacyPolicyPage() {
                     <span className="font-semibold text-[#000000]">A note on scope:</span>{" "}
                     UnioGate&apos;s product — a point-of-sale application for merchants —
                     has not yet launched. This Site is currently a pre-launch &ldquo;coming
-                    soon&rdquo; page with a single purpose: letting you join our waitlist
-                    by email. This Policy is scoped to that. It does{" "}
+                    soon&rdquo; page: you can join our waitlist by email, write to us
+                    through the contact form, and download a demo build of the app. This
+                    Policy is scoped to that. It does{" "}
                     <span className="italic">not</span> describe data practices for a
                     product that does not yet exist. When the UnioGate app launches, it
                     will involve meaningfully more data — including identity verification,
@@ -480,7 +582,7 @@ export default function PrivacyPolicyPage() {
                         href="#future-policy"
                         className="text-[#253E86] underline hover:text-[#10182A]"
                     >
-                        Section 13
+                        Section {no("future-policy")}
                     </a>
                     .
                 </>
