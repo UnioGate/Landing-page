@@ -79,7 +79,8 @@ export default async function RolePage({
                             </p>
                         </div>
 
-                        <div className="bg-white border-[0.7px] border-[#C9CFDD] rounded-[10px] p-6.5 w-full flex flex-col items-start gap-3.5 lg:sticky lg:top-8">
+                        <div className="w-full flex flex-col gap-4 lg:sticky lg:top-8">
+                        <div className="bg-white border-[0.7px] border-[#C9CFDD] rounded-[10px] p-6.5 w-full flex flex-col items-start gap-3.5">
                             <span className="font-sora text-xs font-semibold tracking-[0.05em] uppercase text-[#4A5163]">
                                 Applying
                             </span>
@@ -114,6 +115,25 @@ export default async function RolePage({
                                 </a>
                             </span>
                         </div>
+
+                        {role.offer ? (
+                            <div className="bg-white border-[0.7px] border-[#C9CFDD] rounded-[10px] p-6.5 w-full flex flex-col items-start gap-3">
+                                <span className="font-sora text-xs font-semibold tracking-[0.05em] uppercase text-[#4A5163]">
+                                    What we offer
+                                </span>
+                                <ul className="flex flex-col gap-2.5">
+                                    {role.offer.map((item) => (
+                                        <li key={item} className="grid grid-cols-[7px_1fr] gap-3">
+                                            <span className="block w-1.75 h-1.75 rounded-full bg-[#253E86] mt-2" />
+                                            <span className="font-sora text-[14px] leading-[165%] text-[#4A5163]">
+                                                {item}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ) : null}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -141,6 +161,47 @@ export default async function RolePage({
                             </ul>
                         </div>
                     ))}
+
+                    {role.firstNinety ? (
+                        <div>
+                            <h2 className="font-jakarta text-2xl mb-3.5 pb-3.5 border-b-[0.7px] border-[#C9CFDD]">
+                                Your first ninety days
+                            </h2>
+                            <div className="flex flex-col">
+                                {role.firstNinety.map((phase) => (
+                                    <div
+                                        key={phase.when}
+                                        className="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-1.5 md:gap-7 py-4 border-b-[0.7px] border-[#EDF0F6] last:border-b-0"
+                                    >
+                                        <span className="font-sora text-[13px] font-semibold tracking-[0.04em] uppercase text-[#253E86] md:pt-1">
+                                            {phase.when}
+                                        </span>
+                                        <span className="font-sora text-[16px] leading-[170%] text-[#2A3350]">
+                                            {phase.what}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : null}
+
+                    {role.notFor ? (
+                        <div>
+                            <h2 className="font-jakarta text-2xl mb-3.5 pb-3.5 border-b-[0.7px] border-[#C9CFDD]">
+                                This role isn&apos;t for you if
+                            </h2>
+                            <ul className="flex flex-col gap-3">
+                                {role.notFor.map((item) => (
+                                    <li key={item} className="grid grid-cols-[8px_1fr] gap-3.5">
+                                        <span className="block w-2 h-0.5 bg-[#8A93A8] mt-3.5" />
+                                        <span className="font-sora text-[16px] leading-[170%] text-[#4A5163]">
+                                            {item}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : null}
                 </div>
 
                 {others.length > 0 ? (
