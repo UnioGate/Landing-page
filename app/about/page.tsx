@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -194,9 +195,21 @@ export default function AboutPage() {
                     ))}
                 </div>
 
-                <p className="font-sora text-sm text-[#6B7280] mt-5">
-                    Hover a card to jump to their profiles.
-                </p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-5">
+                    <p className="font-sora text-sm text-[#6B7280]">
+                        Hover a card to jump to their profiles.
+                    </p>
+                    <p className="font-sora text-sm text-[#6B7280]">
+                        Want to join them?{" "}
+                        <Link
+                            href="/careers"
+                            className="text-[#253E86] font-medium underline underline-offset-2 hover:no-underline"
+                        >
+                            See our open roles
+                        </Link>
+                        .
+                    </p>
+                </div>
             </section>
 
             {/* Origin */}
