@@ -108,10 +108,10 @@ export default async function RolePage({
                             <span className="font-sora text-[13px] text-[#4A5163]">
                                 Questions first?{" "}
                                 <a
-                                    href={`mailto:careers@uniogate.app?subject=${encodeURIComponent(role.title)}`}
+                                    href={`mailto:careers@uniogate.com?subject=${encodeURIComponent(role.title)}`}
                                     className="underline hover:text-[#253E86]"
                                 >
-                                    careers@uniogate.app
+                                    careers@uniogate.com
                                 </a>
                             </span>
                         </div>
@@ -248,10 +248,10 @@ export default async function RolePage({
                             thing you built and the problem you want to work on — we read every one.
                         </p>
                         <a
-                            href="mailto:careers@uniogate.app"
+                            href="mailto:careers@uniogate.com"
                             className="font-sora text-[15px] font-semibold underline hover:text-[#253E86] transition-colors duration-150"
                         >
-                            careers@uniogate.app
+                            careers@uniogate.com
                         </a>
                     </div>
                 )}

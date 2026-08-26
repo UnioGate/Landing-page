@@ -134,10 +134,10 @@ export default function CareersPage() {
                         every one, and we open roles for people before we open them to the world.
                     </p>
                     <a
-                        href="mailto:careers@uniogate.app"
+                        href="mailto:careers@uniogate.com"
                         className="bg-white text-[#10182A] font-sora text-base font-semibold py-3.75 px-6.5 rounded-[10px] hover:bg-[#E9ECF3] transition-colors duration-150"
                     >
-                        Write to careers@uniogate.app
+                        Write to careers@uniogate.com
                     </a>
                 </div>
             </section>
