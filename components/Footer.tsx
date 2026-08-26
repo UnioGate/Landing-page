@@ -27,6 +27,7 @@ export default function Footer() {
             <div className="flex items-center justify-center gap-5 md:gap-10 lg:gap-14 flex-row flex-wrap ">
                 {[
                     ["/contact", "Contact"],
+                    ["/careers", "Careers"],
                     ["/privacy", "Privacy"],
                     ["/terms", "Terms"],
                     ["https://expo.dev/artifacts/eas/_SRpRxq7yFt-CC8UjAs0mxK2-skNwK3foNCize1d4EM.apk", "Demo"],
