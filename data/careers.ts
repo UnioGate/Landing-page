@@ -21,6 +21,21 @@ export type Role = {
     offer?: string[];
 };
 
+/**
+ * Rendered on every role page, now and for every role we add later.
+ * Deliberately not a field on Role: it is the same for all of them, and
+ * keeping it here means it cannot be forgotten on the next posting or
+ * quietly reworded into something softer on one of them.
+ */
+export const aiNote = {
+    heading: "Where we stand on AI",
+    body: [
+        "We use AI here, daily, and we expect you to. Refusing to touch it makes your own job harder for no good reason, and we are not looking for that kind of stubbornness.",
+        "What we won't hire is the opposite extreme: someone who has handed their judgement over to it. If every task starts by asking a model what to think, the taste that made you good at this stops getting exercised. That goes quietly — you don't notice until the work has become average.",
+        "So bring us your thinking, sharpened by the tool. Not the tool's thinking with your name on it. In practice we will ask you to talk us through why the work is the way it is, and that conversation is where the difference shows.",
+    ],
+};
+
 export const roles: Role[] = [
     {
         slug: "social-media-manager",

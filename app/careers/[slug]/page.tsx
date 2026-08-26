@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollingText from "@/components/ScrollingText";
-import { roles, getRole } from "@/data/careers";
+import { roles, getRole, aiNote } from "@/data/careers";
 
 export const generateStaticParams = async () =>
     roles.map((r) => ({ slug: r.slug }));
@@ -202,6 +202,18 @@ export default async function RolePage({
                             </ul>
                         </div>
                     ) : null}
+
+                    <div className="bg-white border-[0.7px] border-[#C9CFDD] rounded-[10px] p-6.5 md:p-7.5 flex flex-col gap-3.5">
+                        <h2 className="font-jakarta text-2xl">{aiNote.heading}</h2>
+                        {aiNote.body.map((para) => (
+                            <p
+                                key={para}
+                                className="font-sora text-[15px] leading-[172%] text-[#4A5163]"
+                            >
+                                {para}
+                            </p>
+                        ))}
+                    </div>
                 </div>
 
                 {others.length > 0 ? (
