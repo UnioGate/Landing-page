@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -117,10 +116,10 @@ export default function FaqPage() {
     return (
         <div className="bg-[#E9ECF3]">
             {/* Hero */}
-            <section className="relative pt-6 md:pt-10 overflow-hidden">
+            <section className="pt-6 md:pt-10">
                 <Navbar />
 
-                <div className="relative z-10 w-[95%] lg:w-[90%] mx-auto max-w-4xl py-14 md:py-18 flex flex-col items-start gap-5">
+                <div className="w-[95%] lg:w-[90%] mx-auto py-14 md:py-18 flex flex-col items-start gap-5">
                     <h4 className="font-sora text-sm md:text-base py-2.5 px-5 border-[0.7px] border-[#000000] rounded-[20px] w-fit">
                         FAQ
                     </h4>
@@ -138,13 +137,6 @@ export default function FaqPage() {
                     </p>
                 </div>
 
-                <Image
-                    src={"/landing-page-images/hero-bg.png"}
-                    width={1000}
-                    height={1000}
-                    alt="background"
-                    className="w-full h-full absolute bottom-0 left-0 z-0"
-                />
             </section>
 
             <main className="w-[95%] lg:w-[90%] mx-auto py-16 md:py-20 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 lg:gap-16 items-start">

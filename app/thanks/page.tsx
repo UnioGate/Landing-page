@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
@@ -39,7 +38,7 @@ function ThanksContent() {
     const email = params.get("email") ?? "your inbox";
 
     return (
-        <div className="relative z-10 w-[95%] lg:w-[90%] mx-auto py-16 md:py-20 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-18 items-start">
+        <div className="w-[95%] lg:w-[90%] mx-auto py-16 md:py-20 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-18 items-start">
             <div className="flex flex-col items-start gap-5.5">
                 <motion.span
                     {...rise(0)}
@@ -136,20 +135,13 @@ function ThanksContent() {
 export default function ThanksPage() {
     return (
         <div className="bg-[#E9ECF3] min-h-screen flex flex-col">
-            <section className="relative pt-6 md:pt-10 flex-1 flex flex-col overflow-hidden">
+            <section className="pt-6 md:pt-10 flex-1 flex flex-col">
                 <Navbar />
 
                 <Suspense fallback={null}>
                     <ThanksContent />
                 </Suspense>
 
-                <Image
-                    src={"/landing-page-images/hero-bg.png"}
-                    width={1000}
-                    height={1000}
-                    alt="background"
-                    className="w-full h-full absolute bottom-0 left-0 z-0"
-                />
             </section>
 
             <ScrollingText />

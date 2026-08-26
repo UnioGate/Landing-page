@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -17,10 +16,10 @@ const rise = (delay: number) => ({
 export default function NotFound() {
     return (
         <div className="bg-[#E9ECF3] min-h-screen flex flex-col">
-            <section className="relative pt-6 md:pt-10 flex-1 flex flex-col overflow-hidden">
+            <section className="pt-6 md:pt-10 flex-1 flex flex-col">
                 <Navbar />
 
-                <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center gap-6 py-24 px-6">
+                <div className="flex-1 flex flex-col items-center justify-center text-center gap-6 py-24 px-6">
                     <motion.div
                         {...rise(0)}
                         className="font-jakarta text-[90px] md:text-[130px] lg:text-[150px] font-medium leading-none tracking-[-0.04em] text-[#253E86]"
@@ -62,13 +61,6 @@ export default function NotFound() {
                     </motion.div>
                 </div>
 
-                <Image
-                    src={"/landing-page-images/hero-bg.png"}
-                    width={1000}
-                    height={1000}
-                    alt="background"
-                    className="w-full h-full absolute bottom-0 left-0 z-0"
-                />
             </section>
 
             <ScrollingText />

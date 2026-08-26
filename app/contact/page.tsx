@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { toast } from "react-toastify";
@@ -121,10 +119,10 @@ export default function Contact() {
     return (
         <div className="bg-[#E9ECF3]">
             {/* Hero */}
-            <section className="w-full relative pt-6 md:pt-10 flex flex-col overflow-hidden">
+            <section className="w-full pt-6 md:pt-10 flex flex-col">
                 <Navbar />
 
-                <div className="relative z-10 w-[95%] lg:w-[90%] mx-auto max-w-4xl flex flex-col items-start gap-5 py-14 md:py-18">
+                <div className="w-[95%] lg:w-[90%] mx-auto flex flex-col items-start gap-5 py-14 md:py-18">
                     <h4 className="font-sora text-sm md:text-base font-normal py-2.5 px-5 border-[0.7px] border-[#000000] rounded-[20px] w-fit">
                         TALK TO THE UNIOGATE TEAM
                     </h4>
@@ -144,13 +142,6 @@ export default function Contact() {
                     </p>
                 </div>
 
-                <Image
-                    src={"/landing-page-images/hero-bg.png"}
-                    width={1000}
-                    height={1000}
-                    alt="background"
-                    className="w-full h-full absolute bottom-0 left-0 z-0"
-                />
             </section>
 
             <ScrollingText />

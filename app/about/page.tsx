@@ -156,10 +156,10 @@ export default function AboutPage() {
     return (
         <div className="bg-[#E9ECF3]">
             {/* Hero */}
-            <section className="relative pt-6 md:pt-10 overflow-hidden">
+            <section className="pt-6 md:pt-10">
                 <Navbar />
 
-                <div className="relative z-10 w-[95%] lg:w-[90%] mx-auto max-w-4xl py-14 md:py-18 flex flex-col items-start gap-5">
+                <div className="w-[95%] lg:w-[90%] mx-auto py-14 md:py-18 flex flex-col items-start gap-5">
                     <h4 className="font-sora text-sm md:text-base py-2.5 px-5 border-[0.7px] border-[#000000] rounded-[20px] w-fit">
                         THE PEOPLE BUILDING IT
                     </h4>
@@ -177,13 +177,6 @@ export default function AboutPage() {
                     </p>
                 </div>
 
-                <Image
-                    src={"/landing-page-images/hero-bg.png"}
-                    width={1000}
-                    height={1000}
-                    alt="background"
-                    className="w-full h-full absolute bottom-0 left-0 z-0"
-                />
             </section>
 
             {/* Team */}
