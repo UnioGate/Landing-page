@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { marquee_text } from "@/data/marquee_text";
+import ScrollingText from "@/components/ScrollingText";
 
 const timeline = [
     {
@@ -152,18 +152,7 @@ export default function ThanksPage() {
                 />
             </section>
 
-            <div className="w-full bg-[#10182A] py-2.5">
-                <div className="flex justify-center gap-10 md:gap-20 flex-wrap px-4">
-                    {marquee_text.slice(0, 4).map((text) => (
-                        <span key={text} className="flex items-center gap-3.5">
-                            <span className="block bg-white w-1.75 h-1.75" />
-                            <span className="font-sora text-xs md:text-sm text-white whitespace-nowrap">
-                                {text}
-                            </span>
-                        </span>
-                    ))}
-                </div>
-            </div>
+            <ScrollingText />
 
             <Footer />
         </div>
