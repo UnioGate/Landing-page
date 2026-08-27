@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollingText from "@/components/ScrollingText";
 import { roles, getRole, aiNote } from "@/data/careers";
+import { pageMetadata } from "@/lib/seo";
 
 export const generateStaticParams = async () =>
     roles.map((r) => ({ slug: r.slug }));
@@ -17,11 +18,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const { slug } = await params;
     const role = getRole(slug);
-    if (!role) return { title: "Role not found · UnioGate" };
-    return {
-        title: `${role.title} · Careers at UnioGate`,
-        description: role.blurb,
-    };
+    if (!role) return { title: "Role not found" };
+
+    // Each posting gets its own share preview, so a link to one role does not
+    // look like a link to any other.
+    return pageMetadata({
+        title: role.title,
+        ogTitle: `${role.title} · Careers at UnioGate`,
+        description: `${role.blurb} ${role.location} · ${role.type} · ${role.comp}.`,
+        path: `/careers/${role.slug}`,
+    });
 }
 
 export default async function RolePage({

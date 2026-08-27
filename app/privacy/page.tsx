@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/lib/seo";
 import LegalLayout, { LegalSection } from "@/components/LegalLayout";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "Privacy Policy",
+    ogTitle: "UnioGate Privacy Policy",
     description:
         "How UnioGate collects, uses, and protects your information on our pre-launch site.",
-};
+    path: "/privacy",
+});
 
 const bold = "font-medium text-[#000000]";
 const link = "text-[#253E86] underline hover:text-[#10182A]";
