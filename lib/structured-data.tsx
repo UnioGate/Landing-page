@@ -46,6 +46,8 @@ export const organizationSchema = {
         "@type": "Country",
         name: "Nigeria",
     },
+    /** Confirmed by the founder. A year alone is valid ISO 8601 here. */
+    foundingDate: "2026",
     /**
      * `sameAs` is how Google ties this site to your social profiles when it
      * builds the brand entity, so a wrong URL here is worse than none.
