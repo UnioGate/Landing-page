@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Geist,
   Geist_Mono,
@@ -10,6 +10,7 @@ import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import AppWrapper from "@/components/AppWrapper";
+import { JsonLd, organizationSchema, websiteSchema } from "@/lib/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,38 +36,68 @@ const jakarta = Plus_Jakarta_Sans({
  * SEO KEYWORDS
  */
 const keywords = [
-  "Uniogate",
-  "stablecoin app",
-  "crypto payments",
+  "UnioGate",
+  "accept stablecoin payments",
+  "stablecoin POS",
+  "crypto payments Nigeria",
   "merchant payments",
-  "web3 payments",
-  "digital wallet",
-  "blockchain payments",
-  "crypto checkout",
-  "global payments",
-  "fintech app",
+  "USDT payments",
+  "USDC payments",
+  "CNGN",
+  "naira settlement",
+  "crypto point of sale",
 ];
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {
-    default: "Uniogate",
-    template: "%s | Uniogate",
+    /*
+     * The default is what ranks for the brand query, so it states what the
+     * product does rather than repeating the name. Kept under ~60 characters
+     * so Google does not truncate it.
+     */
+    default: "UnioGate — Accept stablecoin payments in your shop",
+    template: "%s | UnioGate",
   },
 
-  description:
-    "Uniogate is a stablecoin-powered payment platform designed for merchants to send, receive, and manage digital payments seamlessly across borders.",
+  alternates: { canonical: "/" },
 
-  applicationName: "Uniogate",
-  creator: "Uniogate Team",
-  publisher: "Uniogate Team",
+  /*
+   * Google rewrites descriptions it finds unhelpful, and the old one described
+   * a generic cross-border wallet. This one says who it is for and what they
+   * actually get, and stays under ~155 characters so it is not cut off.
+   */
+  description:
+    "Accept USDT, USDC and CNGN in your shop and get paid in naira the same day. UnioGate turns stablecoin payments into cash Nigerian merchants can spend.",
+
+  applicationName: "UnioGate",
+  creator: "UnioGate Team",
+  publisher: "UnioGate Team",
   generator: "Next.js",
 
   keywords,
 
   referrer: "origin-when-cross-origin",
-  robots: "index, follow",
-
-  viewport: "width=device-width, initial-scale=1",
+  robots: {
+    index: true,
+    follow: true,
+    /*
+     * Without max-image-preview:large Google may show only a thumbnail or no
+     * image at all next to the result, and the page is not eligible for
+     * Discover. max-snippet:-1 lets it use as much of the text as it wants.
+     */
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 
   metadataBase: new URL("https://www.uniogate.com/"),
 
@@ -77,11 +108,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Uniogate",
+    title: "UnioGate — Accept stablecoin payments in your shop",
     description:
-      "A stablecoin-powered payment system for modern merchants. Fast, borderless, and secure crypto transactions.",
+      "Take stablecoin payments at the counter and settle in naira the same day. One terminal, no crypto knowledge needed.",
     url: "https://www.uniogate.com/",
-    siteName: "Uniogate",
+    siteName: "UnioGate",
     type: "website",
     locale: "en_US",
     images: [
@@ -89,14 +120,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Uniogate - Stablecoin Payment Platform",
+        alt: "UnioGate — stablecoin payments for merchants",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Uniogate",
+    title: "UnioGate — Accept stablecoin payments in your shop",
     description:
       "Stablecoin payments for merchants — fast, secure, borderless.",
     images: ["/og-image.png"],
@@ -121,6 +152,9 @@ export default function RootLayout({
         </AppWrapper>
 
         <ToastContainer position="top-right" autoClose={3000} />
+
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
       </body>
     </html>
   );

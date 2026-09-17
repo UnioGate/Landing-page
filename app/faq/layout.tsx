@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import { pageMetadata } from "@/lib/seo";
+import { JsonLd, faqSchema } from "@/lib/structured-data";
+import { groups } from "@/data/faq";
 
 /**
  * The page itself is a client component, so it cannot export metadata.
@@ -15,5 +17,10 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function FaqLayout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <>
+            {children}
+            <JsonLd data={faqSchema(groups)} />
+        </>
+    );
 }

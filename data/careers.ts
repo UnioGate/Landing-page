@@ -10,6 +10,14 @@ export type Role = {
     /** Two or three sentences that open the detail page. */
     intro: string;
     applyUrl: string;
+    /**
+     * ISO date the role went live. Feeds JobPosting structured data, which
+     * Google Jobs requires, and the sitemap's lastModified. Google demotes
+     * postings that look stale, so refresh this when you repost a role.
+     */
+    datePosted: string;
+    /** JobPosting employmentType, e.g. FULL_TIME, PART_TIME, CONTRACTOR. */
+    employmentType: string;
     own: string[];
     looking: string[];
     nice: string[];
@@ -47,6 +55,8 @@ export const roles: Role[] = [
         intro:
             "X and LinkedIn are the front door to UnioGate. Most people who end up using us — merchants, partners, the next person we hire — will meet us on one of them first. You own both: what they say, who they talk to, and how fast they grow. They are not the same audience, and knowing the difference is most of the job. We have not launched yet, which means you are not maintaining a brand someone else built. You are deciding what it sounds like.",
         applyUrl: "https://docs.google.com/forms/d/e/1FAIpQLSclO0N0IlIPe5BRu56EDhM_QY_CNBnnPSWbGXd7LDWGGFELcg/viewform?usp=publish-editor",
+        datePosted: "2026-08-26",
+        employmentType: "FULL_TIME",
         own: [
             "Both accounts day to day — the calendar, the posts, the threads, and the replies.",
             "The story. Turning what actually happens inside the company into posts worth reading: a merchant's first settlement, a feature that shipped, a number that moved.",

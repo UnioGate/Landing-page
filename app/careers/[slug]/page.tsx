@@ -7,6 +7,11 @@ import Footer from "@/components/Footer";
 import ScrollingText from "@/components/ScrollingText";
 import { roles, getRole, aiNote } from "@/data/careers";
 import { pageMetadata } from "@/lib/seo";
+import {
+    JsonLd,
+    jobPostingSchema,
+    breadcrumbSchema,
+} from "@/lib/structured-data";
 
 export const generateStaticParams = async () =>
     roles.map((r) => ({ slug: r.slug }));
@@ -266,6 +271,15 @@ export default async function RolePage({
             <ScrollingText />
 
             <Footer />
+
+            <JsonLd data={jobPostingSchema(role)} />
+            <JsonLd
+                data={breadcrumbSchema([
+                    { name: "Home", path: "/" },
+                    { name: "Careers", path: "/careers" },
+                    { name: role.title, path: `/careers/${role.slug}` },
+                ])}
+            />
         </div>
     );
 }

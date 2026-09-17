@@ -23,7 +23,7 @@ export const metadata: Metadata = {
      */
     title: {
         default: "Careers",
-        template: "%s | Uniogate",
+        template: "%s | UnioGate",
     },
 };
 
