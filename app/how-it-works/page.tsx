@@ -157,7 +157,7 @@ export default function HowItWorksPage() {
             </section>
 
             {/* Audiences */}
-            <section className="w-[95%] lg:w-[90%] mx-auto pb-16 md:pb-20 grid grid-cols-1 md:grid-cols-2 gap-px bg-[#C9CFDD] border border-[#C9CFDD]">
+            <section className="w-[95%] lg:w-[90%] mx-auto mb-16 md:mb-20 grid grid-cols-1 md:grid-cols-2 gap-px bg-[#C9CFDD] border border-[#C9CFDD]">
                 <div className="bg-[#E9ECF3] px-8 md:px-11 py-12 flex flex-col gap-4">
                     <h4 className="font-sora text-[13px] tracking-[0.08em] uppercase text-[#253E86]">
                         For customers
