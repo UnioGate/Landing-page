@@ -56,11 +56,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     /*
-     * The default is what ranks for the brand query, so it states what the
-     * product does rather than repeating the name. Kept under ~60 characters
-     * so Google does not truncate it.
+     * The default is what ranks for the brand query, so it pairs the name with
+     * the tagline the emails already sign off with. 43 characters, well inside
+     * the ~60 Google truncates at.
      */
-    default: "UnioGate — Accept stablecoin payments in your shop",
+    default: "UnioGate | The Stablecoin App for Merchants",
     template: "%s | UnioGate",
   },
 
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "UnioGate — Accept stablecoin payments in your shop",
+    title: "UnioGate | The Stablecoin App for Merchants",
     description:
       "Take stablecoin payments at the counter and settle in naira the same day. One terminal, no crypto knowledge needed.",
     url: "https://www.uniogate.com/",
@@ -127,7 +127,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "UnioGate — Accept stablecoin payments in your shop",
+    title: "UnioGate | The Stablecoin App for Merchants",
     description:
       "Stablecoin payments for merchants — fast, secure, borderless.",
     images: ["/og-image.png"],
