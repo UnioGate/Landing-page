@@ -106,6 +106,20 @@ const sections: LegalSection[] = [
                     directly, for example by email, we will collect whatever information
                     you choose to include in that message, so that we can respond to you.
                 </p>
+                <p>
+                    <span className={bold}>Live chat.</span> This Site has a chat widget
+                    in the corner of the page. If you open it and send a message, we
+                    collect the message itself, anything else you choose to tell us in the
+                    conversation (such as your name or email address), and a randomly
+                    generated visitor identifier stored in your browser so the chat can
+                    show you your own conversation when you come back. The chat is
+                    operated for us by GudDesk (see{" "}
+                    <a href="#how-we-share" className={link}>
+                        Section {no("how-we-share")}
+                    </a>
+                    ). You never have to use it: the contact form and email reach the same
+                    team.
+                </p>
 
                 <p className={`${bold} pt-2`}>2.2 Information collected automatically</p>
                 <p>
@@ -148,8 +162,14 @@ const sections: LegalSection[] = [
                         launched.
                     </li>
                     <li>
-                        We do not currently run advertising trackers, third-party analytics
-                        scripts, or social media pixels on this Site.
+                        We do not run advertising trackers or social media pixels on this
+                        Site, and we do not use third-party analytics. The only
+                        third-party script this Site loads is the live chat widget
+                        described in{" "}
+                        <a href="#info-we-collect" className={link}>
+                            Section {no("info-we-collect")}
+                        </a>
+                        .
                     </li>
                 </ul>
                 <p>
@@ -282,7 +302,15 @@ const sections: LegalSection[] = [
                                 to send your waitlist confirmation and contact
                                 acknowledgement emails. To do that, Resend necessarily
                                 receives your email address and the contents of the message
-                                we send you.
+                                we send you. Where our team answers a live chat by email,
+                                Resend carries that reply too.
+                            </li>
+                            <li>
+                                <span className={bold}>GudDesk</span>: live chat, used to
+                                run the chat widget on this Site. GudDesk receives the
+                                messages you send through the chat, any contact details you
+                                give us in the conversation, and basic technical
+                                information about your visit needed to deliver the chat.
                             </li>
                         </ul>
                         We may in future use additional infrastructure, email-delivery, or
@@ -363,6 +391,10 @@ const sections: LegalSection[] = [
                     hosting and infrastructure providers may use a small number of strictly
                     necessary technical cookies or local storage values required for the
                     Site to function (for example, to keep a security or session token).
+                    The live chat widget also stores a visitor identifier in your
+                    browser&apos;s local storage, so that it can show you your own
+                    conversation when you return. Clearing your browser storage removes
+                    it.
                 </p>
                 <p>
                     If we introduce analytics, advertising, or other non-essential cookies
@@ -554,7 +586,7 @@ export default function PrivacyPolicyPage() {
     return (
         <LegalLayout
             title="Privacy Policy"
-            updated="August 21, 2026"
+            updated="September 17, 2026"
             sections={sections}
             intro={
                 <>
