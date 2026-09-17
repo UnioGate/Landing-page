@@ -104,7 +104,7 @@ export default function Features() {
 
                     <p className="text-base md:text-lg lg:text-xl font-sora font-normal text-[#000000]">
                         UnioGate is built for business owners, merchants, and
-                        everyday vendors—not crypto traders. That means no
+                        everyday vendors, not crypto traders. That means no
                         complicated charts to interpret, no industry jargon to
                         learn, and no steep learning curve to overcome.
                     </p>

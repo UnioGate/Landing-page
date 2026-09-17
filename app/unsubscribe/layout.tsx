@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         path: "/unsubscribe",
     }),
 
-    /** Same reasoning as /thanks — see the note there. */
+    /** Same reasoning as /thanks; see the note there. */
     robots: { index: false, follow: true },
 };
 

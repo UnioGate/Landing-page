@@ -120,7 +120,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UnioGate — stablecoin payments for merchants",
+        alt: "UnioGate: stablecoin payments for merchants",
       },
     ],
   },
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "UnioGate | The Stablecoin App for Merchants",
     description:
-      "Stablecoin payments for merchants — fast, secure, borderless.",
+      "Stablecoin payments for merchants: fast, secure, borderless.",
     images: ["/og-image.png"],
   },
 };

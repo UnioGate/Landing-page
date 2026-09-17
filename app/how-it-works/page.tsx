@@ -10,25 +10,25 @@ import Footer from "@/components/Footer";
 const steps = [
     {
         title: "The vendor enters the sale amount",
-        body: "Just like ringing up any sale — enter the price in Naira. No crypto knowledge required to take this step.",
+        body: "Just like ringing up any sale: enter the price in Naira. No crypto knowledge required to take this step.",
         metaLabel: "Required of the vendor",
         metaValue: "Nothing new",
     },
     {
         title: "The customer pays their way",
-        body: "The customer chooses how to pay: scan a QR code and pay with USDT, USDC, or CNGN from any crypto wallet, or pay by card, bank transfer, or USSD — whichever they already have on hand.",
+        body: "The customer chooses how to pay: scan a QR code and pay with USDT, USDC, or CNGN from any crypto wallet, or pay by card, bank transfer, or USSD, whichever they already have on hand.",
         metaLabel: "Methods accepted",
         metaValue: "Crypto + fiat",
     },
     {
         title: "Payment confirms in seconds",
-        body: "Crypto payments confirm on-chain in seconds. Fiat payments confirm through standard payment processing. Either way, the vendor sees confirmation immediately — no waiting, no manual checking.",
+        body: "Crypto payments confirm on-chain in seconds. Fiat payments confirm through standard payment processing. Either way, the vendor sees confirmation immediately: no waiting, no manual checking.",
         metaLabel: "Confirmation",
         metaValue: "Seconds",
     },
     {
         title: "The vendor gets paid, same day",
-        body: "Crypto is automatically converted, and funds settle to the vendor's bank account the same day. Vendors who'd rather hold onto their crypto can choose to withdraw in crypto instead — their choice, not ours.",
+        body: "Crypto is automatically converted, and funds settle to the vendor's bank account the same day. Vendors who'd rather hold onto their crypto can choose to withdraw in crypto instead. Their choice, not ours.",
         metaLabel: "Settlement",
         metaValue: "Same day",
     },
@@ -57,7 +57,7 @@ export default function HowItWorksPage() {
 
                     <p className="font-sora text-lg md:text-xl max-w-2xl">
                         UnioGate lets a vendor accept crypto and fiat side by side, and get
-                        paid the same day — without asking customers to convert anything
+                        paid the same day, without asking customers to convert anything
                         first, and without the vendor doing anything they don&apos;t already
                         know how to do.
                     </p>
@@ -74,7 +74,7 @@ export default function HowItWorksPage() {
 
                     <p className="font-jakarta text-2xl md:text-3xl lg:text-4xl leading-[140%]">
                         Millions of people now hold stablecoins like USDT and USDC. But walk
-                        into a store and try to pay with it, and you hit a wall — no vendor
+                        into a store and try to pay with it, and you hit a wall: no vendor
                         can accept it. You&apos;re forced to convert to Naira first, just to
                         buy something as simple as a bottle of water.{" "}
                         <span className="text-[#8FA6E8]">UnioGate closes that gap.</span>
@@ -167,7 +167,7 @@ export default function HowItWorksPage() {
                     </h3>
                     <p className="font-sora text-lg leading-[170%] text-[#3A3A3A]">
                         Spend the stablecoins you already hold, at a real business, in
-                        seconds — the same way you&apos;d tap a card. No app to download, no
+                        seconds, the same way you&apos;d tap a card. No app to download, no
                         account to create, no converting to Naira first.
                     </p>
                 </div>
@@ -181,7 +181,7 @@ export default function HowItWorksPage() {
                     </h3>
                     <p className="font-sora text-lg leading-[170%] text-[#3A3A3A]">
                         Accept every payment method through one terminal, and get Naira in
-                        your bank account the same day — or hold crypto if you&apos;d rather.
+                        your bank account the same day, or hold crypto if you&apos;d rather.
                     </p>
                 </div>
             </section>

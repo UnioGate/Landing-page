@@ -59,7 +59,7 @@ export default function CareersPage() {
                         className="font-sora text-lg md:text-xl leading-[168%] max-w-2xl"
                     >
                         We&apos;re a small team turning stablecoins into naira a merchant can spend
-                        the same afternoon. Eleven people, no layers — you own a surface end to end
+                        the same afternoon. Eleven people, no layers. You own a surface end to end
                         and ship it.
                     </motion.p>
                 </div>

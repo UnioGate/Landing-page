@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
                 /**
                  * Only /api, which is not content at all. /thanks and
                  * /unsubscribe are kept out of the index with a noindex tag in
-                 * their layouts instead of being blocked here — blocking them
+                 * their layouts instead of being blocked here, because blocking them
                  * would stop crawlers reading that tag, and a blocked page can
                  * still end up indexed as a bare URL.
                  */

@@ -99,7 +99,7 @@ const sections: LegalSection[] = [
                     </li>
                     <li>
                         Does <span className={bold}>not</span> constitute payment, an
-                        investment, a purchase, or consideration of any kind — joining the
+                        investment, a purchase, or consideration of any kind. Joining the
                         waitlist is free and does not obligate you to anything further;
                     </li>
                     <li>
@@ -176,15 +176,15 @@ const sections: LegalSection[] = [
                 </ul>
                 <p>
                     The Demo is covered by the same disclaimers and liability limits as the
-                    rest of the Site — see{" "}
+                    rest of the Site (see{" "}
                     <a href="#no-warranty" className={link}>
                         Section {no("no-warranty")}
                     </a>{" "}
                     and{" "}
                     <a href="#limitation-of-liability" className={link}>
                         Section {no("limitation-of-liability")}
-                    </a>{" "}
-                    — and, being pre-release software, is provided with no warranty of any
+                    </a>
+                    ). Being pre-release software, it is provided with no warranty of any
                     kind whatsoever.
                 </p>
             </>
@@ -358,9 +358,9 @@ const sections: LegalSection[] = [
                     founders, and team members will not be liable for any indirect,
                     incidental, special, consequential, or punitive damages, or any loss of
                     data, revenue, or goodwill, arising out of or related to your use of, or
-                    inability to use, this Site or the Demo — including any damage to a
+                    inability to use, this Site or the Demo, including any damage to a
                     device, or loss of data on it, resulting from installing or running the
-                    Demo — even if we have been advised of the possibility of such damages.
+                    Demo, even if we have been advised of the possibility of such damages.
                 </p>
                 <p>
                     Because this Site does not process payments, hold funds, or provide
@@ -422,11 +422,11 @@ const sections: LegalSection[] = [
                 These Terms are intentionally scoped to this pre-launch waitlist Site. Once
                 the UnioGate application itself launches, your use of that product will be
                 governed by a separate, comprehensive Terms of Service appropriate to a
-                payments product — covering matters such as account creation, fees,
+                payments product, covering matters such as account creation, fees,
                 transaction processing, settlement, KYC/AML obligations, dispute and refund
                 handling, and applicable financial regulation. You will be asked to review
-                and accept those terms separately before using the UnioGate product —
-                joining this waitlist today does not constitute acceptance of the future
+                and accept those terms separately before using the UnioGate product.
+                Joining this waitlist today does not constitute acceptance of the future
                 product&apos;s terms.
             </p>
         ),
@@ -436,7 +436,7 @@ const sections: LegalSection[] = [
         title: "Changes to These Terms",
         body: (
             <p>
-                We may update these Terms from time to time as this Site evolves — for
+                We may update these Terms from time to time as this Site evolves, for
                 example, if we formally incorporate or change infrastructure providers. We
                 will update the &ldquo;Last updated&rdquo; date at the top of this page when
                 we do. Your continued use of the Site after a change takes effect
@@ -482,14 +482,14 @@ export default function TermsOfServicePage() {
             scopeNote={
                 <>
                     <span className="font-semibold text-[#000000]">A note on scope:</span>{" "}
-                    The UnioGate product — a point-of-sale application enabling merchants to
-                    accept crypto and fiat payments — has not yet launched. This Site is
+                    The UnioGate product, a point-of-sale application enabling merchants to
+                    accept crypto and fiat payments, has not yet launched. This Site is
                     currently a pre-launch &ldquo;coming soon&rdquo; page. These Terms
                     govern only your use of <span className="italic">this Site</span>, the
                     waitlist, and the pre-release Demo build. They are{" "}
                     <span className="italic">not</span>{" "}
-                    the terms of service for the future UnioGate application, and nothing here — including anything you see in
-                    the Demo — should be read as describing the terms under which
+                    the terms of service for the future UnioGate application, and nothing here, including anything you see in
+                    the Demo, should be read as describing the terms under which
                     UnioGate&apos;s payment product will eventually operate. See{" "}
                     <a
                         href="#not-a-financial-service"

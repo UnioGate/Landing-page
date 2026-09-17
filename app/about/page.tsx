@@ -227,7 +227,7 @@ export default function AboutPage() {
 
                     <div className="flex flex-col gap-5 font-sora text-lg leading-[170%] font-light">
                         <p>
-                            Chidile found the gap while interning at Uglycash — customers
+                            Chidile found the gap while interning at Uglycash: customers
                             holding stablecoins, vendors with no way to take them. Everything
                             in UnioGate follows from closing it.
                         </p>

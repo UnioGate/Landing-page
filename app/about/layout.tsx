@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
  */
 export const metadata: Metadata = pageMetadata({
     title: "About",
-    ogTitle: "About UnioGate — the people building it",
+    ogTitle: "About UnioGate | The people building it",
     description:
         "UnioGate started with a gap our founder kept running into: millions of people hold stablecoins, and no vendor can take them. We're building the merchant side of that economy from Lagos.",
     path: "/about",

@@ -43,7 +43,7 @@ function UnsubscribeCard() {
                 .limit(1);
 
             // Database errors are for the logs, never for the visitor.
-            // Spread the fields — a PostgrestError logs as `{}` on its own.
+            // Spread the fields; a PostgrestError logs as `{}` on its own.
             if (fetchError) {
                 console.error("unsubscribe lookup failed", {
                     message: fetchError.message,
@@ -121,7 +121,7 @@ function UnsubscribeCard() {
                 </div>
 
                 <div className="bg-[#EEF0F7] border-l-4 border-[#253E86] rounded-r-[10px] px-4.5 py-4 font-sora text-sm leading-6 text-[#5C5050]">
-                    Rejoin any time from the waitlist form on uniogate.com — nothing else changes.
+                    Rejoin any time from the waitlist form on uniogate.com. Nothing else changes.
                 </div>
 
                 <div className="flex flex-col gap-2.5">
@@ -150,7 +150,7 @@ function UnsubscribeCard() {
                 </h1>
                 <p className={copy}>
                     {notFound
-                        ? "There's no UnioGate subscription for that address — it may already be removed, or typed differently."
+                        ? "There's no UnioGate subscription for that address. It may already be removed, or typed differently."
                         : "You'll stop receiving waitlist and product emails from UnioGate. Your spot on the waitlist stays as it is."}
                 </p>
             </div>

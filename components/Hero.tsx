@@ -53,7 +53,7 @@ export default function Hero() {
                     if (resubError) {
                         toast.error(resubError.message);
                     } else {
-                        toast.success("Welcome back — you're subscribed again.");
+                        toast.success("Welcome back. You're subscribed again.");
                         setEmail("");
                     }
                 } else {
@@ -117,7 +117,7 @@ export default function Hero() {
 
                     <p className="font-sora text-lg md:text-xl text-[#000000]  " >Stop turning away crypto customers.
                         UnioGate lets
-                        your business accept stablecoins as easily as any other payment — built for vendors,
+                        your business accept stablecoins as easily as any other payment, built for vendors,
                         not traders.</p>
 
                     <form

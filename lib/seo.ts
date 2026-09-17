@@ -10,7 +10,7 @@ const OG_IMAGE = {
     url: "/og-image.png",
     width: 1200,
     height: 630,
-    alt: "UnioGate — stablecoin payments for merchants",
+    alt: "UnioGate: stablecoin payments for merchants",
 };
 
 type PageSeoInput = {
@@ -32,7 +32,7 @@ type PageSeoInput = {
  * Next merges metadata shallowly: a child that defines `openGraph` replaces the
  * parent's whole `openGraph` object rather than merging into it. That is why
  * every field is spelled out here instead of relying on the root layout to fill
- * the gaps — and why setting only `title` on a page leaves og:title showing the
+ * the gaps, and why setting only `title` on a page leaves og:title showing the
  * site default, which is what was happening across the site.
  */
 export function pageMetadata({

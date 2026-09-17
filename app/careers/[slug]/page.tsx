@@ -96,7 +96,7 @@ export default async function RolePage({
                                 Applying
                             </span>
                             <p className="font-sora text-[15px] leading-[168%] text-[#4A5163]">
-                                One short form — about five minutes. We read every submission and
+                                One short form, about five minutes. We read every submission and
                                 reply either way within a week.
                             </p>
                             <a
@@ -256,7 +256,7 @@ export default async function RolePage({
                         </span>
                         <p className="font-sora text-[15px] leading-[168%] text-[#4A5163]">
                             It&apos;s the only role we&apos;re hiring for right now. Send us the
-                            thing you built and the problem you want to work on — we read every one.
+                            thing you built and the problem you want to work on. We read every one.
                         </p>
                         <a
                             href="mailto:careers@uniogate.com"

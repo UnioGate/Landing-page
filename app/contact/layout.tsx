@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
     title: "Contact",
     ogTitle: "Contact UnioGate",
     description:
-        "Questions about merchant payments, partnerships, or the waitlist? Reach the team directly — we read every message and reply.",
+        "Questions about merchant payments, partnerships, or the waitlist? Reach the team directly. We read every message and reply.",
     path: "/contact",
 });
 

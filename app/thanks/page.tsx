@@ -73,7 +73,7 @@ function ThanksContent() {
                 >
                     We&apos;ve saved <span className="font-semibold">{email}</span> for early
                     access. When the terminal is ready for merchants, you&apos;ll hear from
-                    us before anyone else — no newsletter, no filler.
+                    us before anyone else. No newsletter, no filler.
                 </motion.p>
 
                 <motion.div {...rise(0.24)} className="flex gap-3 flex-wrap">

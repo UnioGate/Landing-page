@@ -40,9 +40,9 @@ export async function sendContactMessage({
     const details = [
         `Name:     ${name}`,
         `Email:    ${email}`,
-        `Topic:    ${topic || '—'}`,
-        `Business: ${business || '—'}`,
-        `Volume:   ${volume || '—'}`,
+        `Topic:    ${topic || '-'}`,
+        `Business: ${business || '-'}`,
+        `Volume:   ${volume || '-'}`,
     ].join('\n');
 
     const { data, error } = await resend.emails.send({
@@ -69,7 +69,7 @@ export async function sendContactAcknowledgement({
         from: 'support@uniogate.com',
         to: email,
         replyTo: 'support@uniogate.com',
-        subject: "We got your message — UnioGate",
+        subject: "UnioGate: we got your message",
         react: ContactAckTemplate({ name, message, topic }),
     });
 

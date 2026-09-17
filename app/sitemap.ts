@@ -5,7 +5,7 @@ import { roles } from "@/data/careers";
 
 /**
  * Pages worth crawling, most important first. /thanks and /unsubscribe are
- * deliberately absent — they carry a noindex tag, and asking Google to crawl a
+ * deliberately absent: they carry a noindex tag, and asking Google to crawl a
  * page you have told it not to index is a contradiction it reports as an error.
  */
 const staticRoutes: {

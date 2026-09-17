@@ -34,7 +34,7 @@ const steps = [
 export function EmailTemplate({ email }: EmailTemplateProps) {
     return (
         <div style={{ backgroundColor: "#e4e7f0", padding: "32px 16px", fontFamily: font }}>
-            {/* Preheader — previews next to the subject line, hidden in the body */}
+            {/* Preheader: previews next to the subject line, hidden in the body */}
             <span
                 style={{
                     display: "none",
@@ -47,7 +47,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                     overflow: "hidden",
                 }}
             >
-                You&apos;re on the UnioGate waitlist — here&apos;s what happens next.
+                You&apos;re on the UnioGate waitlist. Here&apos;s what happens next.
             </span>
 
             <table
@@ -291,7 +291,7 @@ export function EmailTemplate({ email }: EmailTemplateProps) {
                                     color: ink,
                                 }}
                             >
-                                — The UnioGate Team
+                                The UnioGate Team
                             </p>
                         </td>
                     </tr>

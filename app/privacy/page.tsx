@@ -96,14 +96,14 @@ const sections: LegalSection[] = [
                     an approximate monthly payment volume band (for example,
                     &ldquo;Under $10k&rdquo;). The volume band is a self-reported range
                     that helps us understand what kind of businesses are interested in
-                    UnioGate — it is not a financial record, and we do not verify it or
+                    UnioGate. It is not a financial record, and we do not verify it or
                     connect it to any account. Contact submissions are stored in the same
                     Supabase database and are also emailed to our team so that we can
                     reply.
                 </p>
                 <p>
                     <span className={bold}>Correspondence.</span> If you contact us
-                    directly — for example by email — we will collect whatever information
+                    directly, for example by email, we will collect whatever information
                     you choose to include in that message, so that we can respond to you.
                 </p>
 
@@ -230,7 +230,7 @@ const sections: LegalSection[] = [
                 </p>
                 <ul className={list}>
                     <li>
-                        <span className={bold}>Consent</span> — by voluntarily entering
+                        <span className={bold}>Consent</span>: by voluntarily entering
                         your email address and submitting the waitlist form, you consent to
                         us collecting and using it for the purposes described in this
                         Policy. You may withdraw this consent at any time (see{" "}
@@ -240,13 +240,13 @@ const sections: LegalSection[] = [
                         ).
                     </li>
                     <li>
-                        <span className={bold}>Legitimate interest</span> — for
+                        <span className={bold}>Legitimate interest</span>: for
                         automatically collected technical/log data, we rely on our
                         legitimate interest in keeping this Site secure, functional, and
                         free of abuse, balanced against your privacy interests.
                     </li>
                     <li>
-                        <span className={bold}>Legal obligation</span> — where we are
+                        <span className={bold}>Legal obligation</span>: where we are
                         required to retain or disclose information to comply with
                         applicable law.
                     </li>
@@ -273,12 +273,12 @@ const sections: LegalSection[] = [
                         permitted to use it for its own purposes:
                         <ul className="list-[circle] pl-6 flex flex-col gap-2 mt-2">
                             <li>
-                                <span className={bold}>Supabase</span> — database and
+                                <span className={bold}>Supabase</span>: database and
                                 backend infrastructure, used to store waitlist email
                                 addresses and contact form submissions on our behalf.
                             </li>
                             <li>
-                                <span className={bold}>Resend</span> — email delivery, used
+                                <span className={bold}>Resend</span>: email delivery, used
                                 to send your waitlist confirmation and contact
                                 acknowledgement emails. To do that, Resend necessarily
                                 receives your email address and the contents of the message
@@ -315,7 +315,7 @@ const sections: LegalSection[] = [
             <>
                 <p>
                     We retain waitlist email addresses for as long as is reasonably
-                    necessary to fulfill the purposes described in this Policy —
+                    necessary to fulfill the purposes described in this Policy:
                     principally, so that we can contact you about UnioGate&apos;s launch.
                 </p>
                 <p>
@@ -326,7 +326,7 @@ const sections: LegalSection[] = [
                     sending you email, but the record itself is retained. We keep it
                     deliberately: it is how we remember not to email you again if the same
                     address is submitted later. If you would rather we erased the record
-                    entirely, ask us and we will — see{" "}
+                    entirely, ask us and we will. See{" "}
                     <a href="#your-rights" className={link}>
                         Section {no("your-rights")}
                     </a>
@@ -343,7 +343,7 @@ const sections: LegalSection[] = [
                     contact from us a reasonable outer bound), we will either delete
                     waitlist data we no longer have a reasonable use for, or seek your
                     renewed consent before continuing to hold it. You can also ask us to
-                    delete your information at any time — see{" "}
+                    delete your information at any time. See{" "}
                     <a href="#your-rights" className={link}>
                         Section {no("your-rights")}
                     </a>
@@ -416,37 +416,37 @@ const sections: LegalSection[] = [
         body: (
             <>
                 <p>
-                    Subject to applicable law — including, for users in Nigeria, the NDPA —
+                    Subject to applicable law (including, for users in Nigeria, the NDPA),
                     you have the right to:
                 </p>
                 <ul className={list}>
                     <li>
-                        <span className={bold}>Access</span> — ask us to confirm whether we
+                        <span className={bold}>Access</span>: ask us to confirm whether we
                         hold your information and provide you with a copy of it;
                     </li>
                     <li>
-                        <span className={bold}>Rectification</span> — ask us to correct
+                        <span className={bold}>Rectification</span>: ask us to correct
                         inaccurate information (for example, an email address you mistyped);
                     </li>
                     <li>
-                        <span className={bold}>Erasure / withdrawal</span> — ask us to
+                        <span className={bold}>Erasure / withdrawal</span>: ask us to
                         delete your email address from our waitlist at any time, for any
                         reason;
                     </li>
                     <li>
-                        <span className={bold}>Restriction</span> — ask us to limit how we
+                        <span className={bold}>Restriction</span>: ask us to limit how we
                         use your information in certain circumstances;
                     </li>
                     <li>
-                        <span className={bold}>Objection</span> — object to our processing
+                        <span className={bold}>Objection</span>: object to our processing
                         of your information where we rely on legitimate interest;
                     </li>
                     <li>
-                        <span className={bold}>Portability</span> — ask us to provide your
+                        <span className={bold}>Portability</span>: ask us to provide your
                         information in a structured, machine-readable format;
                     </li>
                     <li>
-                        <span className={bold}>Complaint</span> — lodge a complaint with the
+                        <span className={bold}>Complaint</span>: lodge a complaint with the
                         Nigeria Data Protection Commission, or with the relevant data
                         protection authority in your country of residence.
                     </li>
@@ -469,8 +469,8 @@ const sections: LegalSection[] = [
                     <a href="#contact" className={link}>
                         Section {no("contact")}
                     </a>
-                    . Because this Site holds very little about you — an email address, and
-                    a contact message if you sent one — most requests, especially deletion,
+                    . Because this Site holds very little about you (an email address, and
+                    a contact message if you sent one), most requests, especially deletion,
                     can typically be completed quickly.
                 </p>
             </>
@@ -496,8 +496,8 @@ const sections: LegalSection[] = [
                 <p>
                     This Policy is intentionally scoped to this pre-launch waitlist Site.
                     Once the UnioGate application itself launches, the scope of data we
-                    collect and process will expand substantially, and will likely include
-                    — among other things — identity verification information (such as
+                    collect and process will expand substantially, and will likely include,
+                    among other things, identity verification information (such as
                     government-issued ID, business registration documents, and KYC/KYB
                     checks), transaction and payment data, device and wallet information
                     necessary to process crypto and fiat payments, and information needed
@@ -507,7 +507,7 @@ const sections: LegalSection[] = [
                 <p>
                     Before any of that data collection begins, we will publish a new,
                     comprehensive Privacy Policy describing it in full, and you will be
-                    asked to review and accept that policy separately — joining this
+                    asked to review and accept that policy separately. Joining this
                     waitlist today does not constitute consent to the data practices of the
                     future UnioGate product.
                 </p>
@@ -519,7 +519,7 @@ const sections: LegalSection[] = [
         title: "Changes to This Policy",
         body: (
             <p>
-                We may update this Policy from time to time as this Site evolves — for
+                We may update this Policy from time to time as this Site evolves, for
                 example, if we add analytics, change infrastructure providers, or formally
                 incorporate. We will update the &ldquo;Last updated&rdquo; date at the top
                 of this page when we do, and where a change is material, we will take
@@ -571,15 +571,15 @@ export default function PrivacyPolicyPage() {
             scopeNote={
                 <>
                     <span className="font-semibold text-[#000000]">A note on scope:</span>{" "}
-                    UnioGate&apos;s product — a point-of-sale application for merchants —
+                    UnioGate&apos;s product, a point-of-sale application for merchants,
                     has not yet launched. This Site is currently a pre-launch &ldquo;coming
                     soon&rdquo; page: you can join our waitlist by email, write to us
                     through the contact form, and download a demo build of the app. This
                     Policy is scoped to that. It does{" "}
                     <span className="italic">not</span> describe data practices for a
                     product that does not yet exist. When the UnioGate app launches, it
-                    will involve meaningfully more data — including identity verification,
-                    transaction, and financial information — and we will publish an
+                    will involve meaningfully more data, including identity verification,
+                    transaction, and financial information, and we will publish an
                     updated, expanded Privacy Policy before that happens, which you will be
                     asked to review and accept separately. See{" "}
                     <a

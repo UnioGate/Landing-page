@@ -31,7 +31,7 @@ const channels = [
     {
         icon: <BuildingIcon />,
         title: "Partnerships & integrations",
-        body: "PSPs, POS vendors and stablecoin issuers — we're building the merchant side of the rails.",
+        body: "PSPs, POS vendors and stablecoin issuers: we're building the merchant side of the rails.",
         href: "mailto:partners@uniogate.com",
         link: "partners@uniogate.com",
     },
@@ -102,7 +102,7 @@ export default function Contact() {
             if (!res.ok) throw new Error("Request failed");
 
             setSent(true);
-            toast.success("Message sent — we'll be in touch.");
+            toast.success("Message sent. We'll be in touch.");
         } catch (err) {
             console.error(err);
             toast.error("Something went wrong. Please email hello@uniogate.com.");
@@ -162,7 +162,7 @@ export default function Contact() {
                                 Message received.
                             </h3>
                             <p className="font-sora text-lg font-light max-w-md">
-                                Thanks — we&apos;ve logged your enquiry and a member of the team
+                                Thanks. We&apos;ve logged your enquiry and a member of the team
                                 will reply to your inbox within one business day.
                             </p>
                             <button

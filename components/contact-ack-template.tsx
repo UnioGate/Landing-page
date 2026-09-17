@@ -36,7 +36,7 @@ const steps = [
 export function ContactAckTemplate({ name, message, topic }: ContactAckTemplateProps) {
     return (
         <div style={{ backgroundColor: "#e4e7f0", padding: "32px 16px", fontFamily: font }}>
-            {/* Preheader — previews next to the subject line, hidden in the body */}
+            {/* Preheader: previews next to the subject line, hidden in the body */}
             <span
                 style={{
                     display: "none",
@@ -49,7 +49,7 @@ export function ContactAckTemplate({ name, message, topic }: ContactAckTemplateP
                     overflow: "hidden",
                 }}
             >
-                We&apos;ve got your message — a reply is on the way within one business day.
+                We&apos;ve got your message. A reply is on the way within one business day.
             </span>
 
             <table
@@ -296,7 +296,7 @@ export function ContactAckTemplate({ name, message, topic }: ContactAckTemplateP
                                     color: ink,
                                 }}
                             >
-                                — The UnioGate Team
+                                The UnioGate Team
                             </p>
                         </td>
                     </tr>

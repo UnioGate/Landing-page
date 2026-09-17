@@ -4,7 +4,7 @@ import type { Group } from "@/data/faq";
 
 /**
  * Renders a JSON-LD block. Next keeps this in the server-rendered HTML, which
- * is what crawlers read — a script injected on the client would be missed by
+ * is what crawlers read; a script injected on the client would be missed by
  * some of them.
  */
 export function JsonLd({ data }: { data: object }) {
@@ -30,7 +30,7 @@ export const organizationSchema = {
     name: "UnioGate",
     url: SITE_URL,
     /**
-     * This must be the logo itself, not the social banner — Google renders it
+     * This must be the logo itself, not the social banner, because Google renders it
      * where a logo belongs. NOTE: logo.png is 100x100 and Google asks for at
      * least 112x112, so re-export it larger when you get the chance.
      */
@@ -93,7 +93,7 @@ export function faqSchema(groups: Group[]) {
 }
 
 /**
- * JobPosting, which is what makes a role eligible to appear in Google Jobs —
+ * JobPosting, which is what makes a role eligible to appear in Google Jobs,
  * a separate, much less crowded surface than ordinary web results.
  */
 export function jobPostingSchema(role: Role) {

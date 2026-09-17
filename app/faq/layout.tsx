@@ -10,7 +10,7 @@ import { groups } from "@/data/faq";
  */
 export const metadata: Metadata = pageMetadata({
     title: "FAQ",
-    ogTitle: "UnioGate FAQ — stablecoin payments, answered",
+    ogTitle: "UnioGate FAQ | Stablecoin payments, answered",
     description:
         "How settlement works, what merchants pay, which stablecoins we take, and when we launch. The questions we get asked most, answered plainly.",
     path: "/faq",

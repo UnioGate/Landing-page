@@ -17,11 +17,11 @@ export const groups: Group[] = [
             ],
             [
                 "Who is UnioGate for?",
-                "Primarily SME merchants — retail shops, cafes, coworking spaces, service businesses — who want to accept crypto payments from customers without dealing with wallets, conversion, or manual settlement themselves.",
+                "Primarily SME merchants (retail shops, cafes, coworking spaces, service businesses) who want to accept crypto payments from customers without dealing with wallets, conversion, or manual settlement themselves.",
             ],
             [
                 "Is UnioGate live yet?",
-                "Not yet. UnioGate is currently in active development. This site is a pre-launch waitlist — join it to be notified as soon as early access opens.",
+                "Not yet. UnioGate is currently in active development. This site is a pre-launch waitlist. Join it to be notified as soon as early access opens.",
             ],
             [
                 "Which countries does UnioGate support?",
@@ -35,7 +35,7 @@ export const groups: Group[] = [
         items: [
             [
                 "What payment methods can my customers use?",
-                "Cryptocurrency (scan a QR code and pay from any compatible wallet) and standard fiat methods — card, bank transfer, and USSD. Same terminal, customer picks what's convenient for them.",
+                "Cryptocurrency (scan a QR code and pay from any compatible wallet) and standard fiat methods: card, bank transfer, and USSD. Same terminal, customer picks what's convenient for them.",
             ],
             [
                 "Which cryptocurrencies does UnioGate support?",
@@ -43,7 +43,7 @@ export const groups: Group[] = [
             ],
             [
                 "Do I need a crypto wallet to use UnioGate as a customer?",
-                "You need a wallet to pay with crypto (any standard, compatible wallet works), but you don't need a UnioGate account or app of your own — you're simply paying a vendor, the same way you'd tap a card.",
+                "You need a wallet to pay with crypto (any standard, compatible wallet works), but you don't need a UnioGate account or app of your own. You're simply paying a vendor, the same way you'd tap a card.",
             ],
             [
                 "How fast are payments confirmed?",
@@ -57,15 +57,15 @@ export const groups: Group[] = [
         items: [
             [
                 "How do I get paid as a vendor?",
-                "Sales settle to your bank account in Naira, same day, on a schedule you control — automatically, or on demand. You can also choose to withdraw in crypto instead of converting to Naira, if you'd rather hold it.",
+                "Sales settle to your bank account in Naira, same day, on a schedule you control, automatically or on demand. You can also choose to withdraw in crypto instead of converting to Naira, if you'd rather hold it.",
             ],
             [
                 "What fees does UnioGate charge?",
-                "UnioGate earns a small, transparent fee per transaction — there are no subscriptions or setup costs. We'll publish the exact fee structure before launch, so vendors know precisely what they're paying up front.",
+                "UnioGate earns a small, transparent fee per transaction. There are no subscriptions or setup costs. We'll publish the exact fee structure before launch, so vendors know precisely what they're paying up front.",
             ],
             [
                 "Does UnioGate hold my money?",
-                "UnioGate is not designed to hold vendor funds long-term — the goal is same-day settlement to your own bank account or wallet, not custody. Full detail will be available in our Terms of Service for the live product ahead of launch.",
+                "UnioGate is not designed to hold vendor funds long-term. The goal is same-day settlement to your own bank account or wallet, not custody. Full detail will be available in our Terms of Service for the live product ahead of launch.",
             ],
         ],
     },
@@ -75,11 +75,11 @@ export const groups: Group[] = [
         items: [
             [
                 "Is UnioGate regulated?",
-                "UnioGate has not yet launched, and this waitlist site does not offer any payment, custody, or financial service today — see our Terms of Service for detail. We're pursuing the appropriate licensing and regulatory engagement ahead of the product's launch.",
+                "UnioGate has not yet launched, and this waitlist site does not offer any payment, custody, or financial service today. See our Terms of Service for detail. We're pursuing the appropriate licensing and regulatory engagement ahead of the product's launch.",
             ],
             [
                 "Is my information safe if I join the waitlist?",
-                "Joining the waitlist only asks for your email address — see our Privacy Policy for exactly what we collect and how it's handled.",
+                "Joining the waitlist only asks for your email address. See our Privacy Policy for exactly what we collect and how it's handled.",
             ],
         ],
     },
@@ -93,14 +93,14 @@ export const groups: Group[] = [
             ],
             [
                 "When does UnioGate launch?",
-                "We don't have a fixed public launch date yet — we'd rather ship something solid than promise a date and miss it. Joining the waitlist is the fastest way to find out first.",
+                "We don't have a fixed public launch date yet. We'd rather ship something solid than promise a date and miss it. Joining the waitlist is the fastest way to find out first.",
             ],
             [
                 "Do I need any technical knowledge to use UnioGate?",
-                "No. If you can ring up a sale on any standard POS terminal, you can use UnioGate — the crypto and settlement complexity happens behind the scenes.",
+                "No. If you can ring up a sale on any standard POS terminal, you can use UnioGate. The crypto and settlement complexity happens behind the scenes.",
             ],
             [
-                "I have another question — who do I contact?",
+                "I have another question. Who do I contact?",
                 "Reach out through the Contact link in our footer, and we'll get back to you.",
             ],
         ],

@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         volume: volume?.trim() || null,
     };
 
-    // Store it first — the row is the record of truth even if the emails fail.
+    // Store it first; the row is the record of truth even if the emails fail.
     const { error: dbError } = await supabase
         .from('contact_messages')
         .insert([payload]);
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
         sendContactAcknowledgement(emailArgs),
     ]);
 
-    // The acknowledgement is a courtesy — never fail the submission over it.
+    // The acknowledgement is a courtesy; never fail the submission over it.
     if (acknowledged.status === 'rejected') {
         console.error('contact acknowledgement email failed', acknowledged.reason);
     }
