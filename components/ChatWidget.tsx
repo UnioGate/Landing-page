@@ -8,7 +8,7 @@ import { useEffect } from "react";
  * The widget paints above everything on the page, including the splash screen
  * at z-9999, so it is mounted only once the splash has finished. Loading it any
  * earlier drops a chat bubble onto an otherwise blank white loading screen.
- * ****
+ * ********
  * widget.js reads window.GudDeskSettings the moment it runs, so the two steps
  * are done by hand rather than through next/script: that way the settings are
  * guaranteed to be in place first, with no ordering assumptions between two
